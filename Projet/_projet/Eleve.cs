@@ -12,7 +12,9 @@ namespace _projet
             public int promo;
             public int groupeTD;
 
-            public Eleve(string Nom, string Prenom, Projet[] Proj) : base(Nom, Prenom, Proj) { }
+        public Eleve(string Nom, string Prenom) : base (Nom, Prenom) { }
+            
+        public Eleve(string Nom, string Prenom, Projet[] Proj) : base(Nom, Prenom, Proj) { }
 
             public Eleve(string Nom, string Prenom, Projet[] Proj, int Annee, int Promo, int Groupe) : base(Nom, Prenom, Proj)
             {

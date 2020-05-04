@@ -11,6 +11,8 @@ namespace _projet
         public string metier;
         public string entreprise;
 
+        public Exterieur (string Nom, string Prenom) : base (Nom, Prenom) { }
+
         public Exterieur(string Nom, string Prenom, Projet[] Proj) : base(Nom, Prenom, Proj) { }
 
         public Exterieur(string Nom, string Prenom, Projet[] Proj, string Metier, string Entreprise) : base(Nom, Prenom, Proj)

@@ -12,6 +12,12 @@ namespace _projet
         public string prenom;
         public Projet[] projet;
 
+        public Personne(string Nom, string Prenom)
+        {
+            nom = Nom;
+            prenom = Prenom;
+        }
+
         public Personne(string Nom, string Prenom, Projet[] Proj)
         {
             nom = Nom;

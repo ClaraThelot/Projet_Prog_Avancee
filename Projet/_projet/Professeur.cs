@@ -10,6 +10,8 @@ namespace _projet
     {
         public Matiere[] matieres;
 
+        public Professeur(string Nom, string Prenom) : base(Nom, Prenom) { }
+        
         public Professeur(string Nom, string Prenom, Projet[] Proj) : base(Nom, Prenom, Proj) { }
 
         public Professeur(string Nom, string Prenom, Projet[] Proj, Matiere[] Matiere) : base(Nom, Prenom, Proj)
