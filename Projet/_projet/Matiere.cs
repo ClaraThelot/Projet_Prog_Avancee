@@ -8,9 +8,9 @@ namespace _projet
 {
     class Matiere
     {
-        private string _nom;
-        private string _code;
-        private string _UE;
+        public string _nom { get; set; }
+        private string _code { get; set; }
+        private string _UE { get; set; }
 
         public Matiere(string nom, string code, string UE)
         {
