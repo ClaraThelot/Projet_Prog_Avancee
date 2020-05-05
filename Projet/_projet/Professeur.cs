@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Professeur
+    class Professeur :Personne
     {
         public Matiere[] matieres;
 
@@ -24,7 +24,7 @@ namespace _projet
             string res = " ";
             res = res + "Nom : " + nom + "/n";
             res = res + "Prénom : " + prenom + "/n";
-            res = res + "Liste des matières enseignées : "
+            res = res + "Liste des matières enseignées : ";
                 for (int j = 0; j < matieres.Length; j++)
             {
                 res = res + matieres[j] + " ; ";
