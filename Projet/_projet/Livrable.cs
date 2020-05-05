@@ -16,6 +16,13 @@ namespace _projet
             _type = type;
             _echeance = echeance;
         }
+        public override string ToString()
+        {
+            string res = "";
+            res = res + "Le livrable : " + _type + "\n";
+            res = res + " est à rendre poour le : " + _echeance + "\n";
+            return res;
+        }
 
     }
 }
