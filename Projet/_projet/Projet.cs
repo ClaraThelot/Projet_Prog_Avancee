@@ -11,14 +11,14 @@ namespace _projet
         private string _nomProjet { get; }
         private double _duree { get; set; }
         private bool _sujetLibre{ get; set; }
-        private Eleve[] _eleves { get; set; }
-        private Personne[] _intervenants { get; set; }
-        private Matiere[] _matieres { get; set; }
+        private List<Eleve> _eleves { get; set; }
+        private List<Exterieur> _intervenants { get; set; }
+        private List<Matiere> _matieres { get; set; }
         private Eleve _chefprojet { get; set; }
         private bool _sujetAcheve { get; set; }
         private double _note { get; set; }
 
-        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, Eleve[] eleves, Personne[] intervenants, Matiere[] matieres, Eleve chefprojet)
+        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Eleve> eleves, List<Exterieur> intervenants, List<Matiere> matieres, Eleve chefprojet)
         {
             _nomProjet = nom;
             _duree = duree;
@@ -32,44 +32,62 @@ namespace _projet
         }
         public void ajoutEleve (Eleve E1)
         {
-            for(int i=0; i<_eleves.Length; i++)
+            int counter = 0;
+            foreach(Eleve element in _eleves)
             {
-                if(_eleves[i]!=null) { _eleves[i] = E1; } //Si le tableau n'est pas vide, on ajoute un l'élève considéré 
+                if(element!=null)
+                {_eleves[counter] = E1; } //Si le tableau n'est pas vide, on ajoute un l'élève considéré 
+                counter++;
             }
         }
         public void supprimeEleve(Eleve E1)
         {
-            for(int i=0; i<_eleves.Length;i++)
-            { if (_eleves[i] == E1) _eleves[i] = null; } // Supprime un élève, par contre laisse un trou dans le tableau à l'endroit considéré
+            int counter = 0;
+            foreach (Eleve element in _eleves)
+            { if (element == E1) { _eleves[counter] = null; }
+                counter++;
+            } // Supprime un élève, par contre laisse un trou dans le tableau à l'endroit considéré
         }
 
         public void ajoutMatiere(Matiere M1)
         {
-            for (int i = 0; i < _matieres.Length; i++)
+            int counter = 0;
+            foreach(Matiere element in _matieres)
             {
-                if (_matieres[i] != null) { _matieres[i] = M1; }
+                if (element != null) { _matieres[counter] = M1; }
+                counter++;
             }
+
         }
       
        public void supprimeMatiere(Matiere M1)
         {
-            for (int i = 0; i < _matieres.Length; i++)
-            { if (_matieres[i] == M1) _matieres[i] = null; } 
+            int counter = 0;
+            foreach(Matiere element in _matieres)
+            { if (element == M1) _matieres[counter] = null;
+                counter++;
+            } 
         }
 
    
         public void ajoutIntervenant(Exterieur Ex1)
         {
-            for (int i = 0; i < _intervenants.Length; i++)
+            int counter = 0;
+            foreach(Exterieur element in _intervenants)
             {
-                if (_intervenants[i] != null) { _intervenants[i] = Ex1; }
+                if (element != null) { _intervenants[counter] = Ex1;
+                    counter++;
+                }
             }
         }
 
         public void supprimeIntervenant(Exterieur Ex1)
         {
-            for (int i = 0; i < _intervenants.Length; i++)
-            { if (_intervenants[i] == Ex1) _intervenants[i] = null; }
+            int counter = 0;
+            foreach(Personne element in _intervenants)
+            { if (element == Ex1) _intervenants[counter] = null;
+                counter++;
+            }
         }
 
         public override string ToString()
@@ -78,9 +96,9 @@ namespace _projet
             res = res + "Nom du projet : " + _nomProjet + "\n";
             res = res + "Durée du projet :" + _duree + "\n";
             res = res + "Type de sujet :" + _sujetLibre + "\n";
-            res = res + "Elèves participants :" + _eleves + "\n";
-            res = res + "Intervenants  " + _intervenants + "\n";
-            res = res + "Matières concernées :" + _matieres + "\n";
+            res = res + "Elèves participants :" + _eleves.ToString() + "\n";
+            res = res + "Intervenants  " + _intervenants.ToString() + "\n";
+            res = res + "Matières concernées :" + _matieres.ToString() + "\n";
             res = res + "Chef de Projet :" + _chefprojet + "\n";
             res = res + "Sujet Achevé : " + _sujetAcheve + "\n";
             if (_sujetAcheve == true) res = res + "Note : " + _note + "\n";

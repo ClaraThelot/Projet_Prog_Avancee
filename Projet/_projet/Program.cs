@@ -115,9 +115,105 @@ namespace _projet
                 Livrable liv = new Livrable(type,echeance);
                 Livrables.Add(liv);
             }
-           foreach (Livrable element in Livrables)
+
+            // Même procédé avec les projets grâce au fichier Projets.txt
+            string ligneP;
+            List<Projet> Projets = new List<Projet>();
+            string nom;
+            int duree;
+            bool sujetlibre;
+            double note;
+            bool acheve;
+            List<Eleve> eparticipant = new List<Eleve>();
+            List<Exterieur> pparticipant = new List<Exterieur>();
+            List<Matiere> matconcernee = new List<Matiere>();
+            Eleve chef = new Eleve() ;
+            System.IO.StreamReader file4 = new System.IO.StreamReader("Projets.txt");
+            while ((ligneP = file4.ReadLine()) != null)
             {
-                Console.WriteLine(element.ToString());
+                String[] information = ligneP.Split(separateur);
+                nom = information[0];
+                duree = int.Parse(information[1]);
+                sujetlibre = bool.Parse(information[2]);
+                note = double.Parse(information[3]);
+                acheve = bool.Parse(information[4]);
+                int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                int choix = 0;
+                foreach (Matiere element in Matieres)
+                {
+                
+                    if(information[5]==element._nom)
+                    {
+                        choix = elementi;
+                    }
+                    elementi++;
+                }
+                matconcernee.Add(Matieres[choix]);
+                for (int i = 6; i < information.Length; i++)
+                {
+                    int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                    int choix2 = 0;
+                    if (information[i][0] == 'E')
+                    {
+
+                        int start = 1;
+                        string nomparticipant = information[i].Substring(start);
+                        foreach (Eleve element in Eleves)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
+                        {
+                            if (element.nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            {
+                                choix2 = element2;
+                            }
+                            else
+                            {
+
+                            }
+                            element2 += 1;
+                        }
+                        eparticipant.Add(Eleves[choix]);
+                    }
+                    if (information[i][0] == 'P')
+                    {
+                        int start = 1;
+                        string nomparticipant = information[i].Substring(start);
+                        foreach (Exterieur element in Exterieurs)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
+                        {
+                            if (element.nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            {
+                                choix2 = element2;
+                            }
+                            else
+                            {
+
+                            }
+                            element2 += 1;
+                        }
+                        pparticipant.Add(Exterieurs[choix2]);
+                    }
+                    if(information[i][0] == 'C')
+                    {
+                        int start = 1;
+                        string nomparticipant = information[i].Substring(start);
+                        foreach (Eleve element in Eleves)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
+                        {
+                            if (element.nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            {
+                                choix2 = element2;
+                            }
+                            else
+                            {
+
+                            }
+                            element2 += 1;
+                        }
+                        chef = Eleves[choix2];
+                    }
+                }
+
+                Projet ajout = new Projet(nom, duree, sujetlibre,note, acheve, eparticipant, pparticipant, matconcernee, chef);
+                Projets.Add(ajout);
+                foreach (Projet element in Projets)
+                { Console.WriteLine(element.ToString()); }
             }
         }
     }

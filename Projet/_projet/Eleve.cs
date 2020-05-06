@@ -11,6 +11,7 @@ namespace _projet
             public string _annee{ get; set; }
             public int _promo { get; set; }
             public int _groupeTD { get; set; }
+        public Eleve() { }
 
         public Eleve(string Nom, string Prenom, string annee, int promo, int groupeTD) : base (Nom, Prenom) {
             _annee = annee;
