@@ -9,9 +9,9 @@ namespace _projet
     class Livrable
     {
         private string _type;
-        private DateTime _echeance;
+        private string _echeance;
 
-        public Livrable( string type, DateTime echeance)
+        public Livrable( string type, string echeance)
         {
             _type = type;
             _echeance = echeance;

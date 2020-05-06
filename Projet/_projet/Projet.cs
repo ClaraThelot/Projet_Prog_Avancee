@@ -28,12 +28,12 @@ namespace _projet
         public override string ToString()
         {
             string res = " ";
-            res = res + "Durée du projet :" + _duree;
-            res = res + "Type de sujet :" + _sujetLibre;
-            res = res + "Elèves participants :" + _eleves;
-            res = res + "Intervenants  " + _intervenants;
-            res = res + "Matières concernées :" + _matieres;
-            res = res + "Chef de Projet :" + _chefprojet;
+            res = res + "Durée du projet :" + _duree + "\n";
+            res = res + "Type de sujet :" + _sujetLibre + "\n";
+            res = res + "Elèves participants :" + _eleves + "\n";
+            res = res + "Intervenants  " + _intervenants + "\n";
+            res = res + "Matières concernées :" + _matieres + "\n";
+            res = res + "Chef de Projet :" + _chefprojet + "\n";
             return res;
         }
     }

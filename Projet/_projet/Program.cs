@@ -112,16 +112,13 @@ namespace _projet
                 String[] information = ligneL.Split(separateur);
                 type= information[0];
                 echeance = information[1];
-                DateTime rendu = DateTime.Parse(echeance);
-                Console.WriteLine(echeance); Console.WriteLine(rendu);
-                /*Livrable liv = new Livrable(type,rendu);
-                Livrables.Add(liv);*/
+                Livrable liv = new Livrable(type,echeance);
+                Livrables.Add(liv);
             }
-            /*
-            foreach (Exterieur element in Exterieurs)
+           foreach (Livrable element in Livrables)
             {
                 Console.WriteLine(element.ToString());
-            }*/
+            }
         }
     }
 }
