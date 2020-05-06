@@ -8,7 +8,7 @@ namespace _projet
 {
     class Professeur :Personne
     {
-        public Matiere matieres;                                                        // J'ai temporairement enlevé le fait que c'est un tableau
+        public Matiere matieres { get; set; }                                                       // J'ai temporairement enlevé le fait que c'est un tableau
 
         public Professeur(string Nom, string Prenom, Matiere Matieres) : base(Nom, Prenom) {
             matieres = Matieres;

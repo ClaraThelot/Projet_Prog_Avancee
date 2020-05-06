@@ -8,8 +8,8 @@ namespace _projet
 {
     class Personne
     {
-        public string nom { get ; set; }
-        public string prenom { get; set; }
+        public string nom { get ;  }
+        public string prenom { get;  }
         public Projet[] projet { get; set; }
 
         public Personne()

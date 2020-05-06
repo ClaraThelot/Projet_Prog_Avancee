@@ -8,9 +8,9 @@ namespace _projet
 {
     class Eleve : Personne
     {
-            public string _annee;
-            public int _promo;
-            public int _groupeTD;
+            public string _annee{ get; set; }
+            public int _promo { get; set; }
+            public int _groupeTD { get; set; }
 
         public Eleve(string Nom, string Prenom, string annee, int promo, int groupeTD) : base (Nom, Prenom) {
             _annee = annee;
@@ -26,7 +26,20 @@ namespace _projet
                 _promo = Promo;
                 _groupeTD = Groupe;
             }
-            public override string ToString()
+
+        public void ajoutProjet(Projet P1)
+        {
+            for (int i = 0; i < projet.Length; i++)
+            {
+                if (projet[i] != null) { projet[i] = P1; }
+            }
+        }
+        public void supprimeProjet(Projet P1)
+        {
+            for (int i = 0; i < projet.Length; i++)
+            { if (projet[i] == P1) projet[i] = null; }
+        }
+        public override string ToString()
             {
                 string res = "";
                 res = res + "Nom : " + nom + "\n";

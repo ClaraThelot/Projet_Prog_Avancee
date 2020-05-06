@@ -8,8 +8,8 @@ namespace _projet
 {
     class Livrable
     {
-        private string _type;
-        private string _echeance;
+        private string _type { get; set; }
+        private string _echeance { get; set; }
 
         public Livrable( string type, string echeance)
         {
@@ -20,7 +20,7 @@ namespace _projet
         {
             string res = "";
             res = res + "Le livrable : " + _type + "\n";
-            res = res + " est à rendre poour le : " + _echeance + "\n";
+            res = res + " est à rendre pour le : " + _echeance + "\n";
             return res;
         }
 
