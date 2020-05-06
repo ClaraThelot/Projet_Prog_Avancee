@@ -124,6 +124,7 @@ namespace _projet
             bool sujetlibre;
             double note;
             bool acheve;
+            List<Livrable> llivrable = new List<Livrable>();
             List<Eleve> eparticipant = new List<Eleve>();
             List<Exterieur> pparticipant = new List<Exterieur>();
             List<Matiere> matconcernee = new List<Matiere>();
@@ -193,7 +194,27 @@ namespace _projet
                         }
                         pparticipant.Add(Exterieurs[choix2]);
                     }
-                    if(information[i][0] == 'C')
+                    if (information[i][0] == 'L')
+                    {
+                        int start = 1;
+                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                        int choix2 = 0;
+                        string echeanceprojet = information[i].Substring(start);
+                        foreach (Livrable element in Livrables)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
+                        {
+                            if (element._echeance == echeanceprojet)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            {
+                                choix2 = element2;
+                            }
+                            else
+                            {
+
+                            }
+                            element2 += 1;
+                        }
+                        llivrable.Add(Livrables[choix2]);
+                    }
+                    if (information[i][0] == 'C')
                     {
                         int start = 1;
                         int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
@@ -214,7 +235,7 @@ namespace _projet
                         chef = Eleves[choix2];
                     }
                 }
-                Projet ajout = new Projet(nom, duree, sujetlibre,note, acheve, eparticipant, pparticipant, matconcernee, chef);
+                Projet ajout = new Projet(nom, duree, sujetlibre,note, acheve, llivrable, eparticipant, pparticipant, matconcernee, chef);
                 Projets.Add(ajout);
                 foreach (Projet element in Projets)
                 { Console.WriteLine(element.ToString()); }

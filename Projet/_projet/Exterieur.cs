@@ -11,7 +11,8 @@ namespace _projet
         public string metier { get; set; }
         public string entreprise { get; set; }
 
-        public Exterieur (string Nom, string Prenom, string Metier, string Entreprise) : base (Nom, Prenom) {
+        public Exterieur (string Nom, string Prenom, string Metier, string Entreprise) : base (Nom, Prenom) 
+        {
             metier = Metier;
             entreprise = Entreprise;
         }

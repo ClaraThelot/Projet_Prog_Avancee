@@ -14,12 +14,14 @@ namespace _projet
         private List<Eleve> _eleves { get; set; }
         private List<Exterieur> _intervenants { get; set; }
         private List<Matiere> _matieres { get; set; }
+        private List <Livrable> _livrables { get; set; }
         private Eleve _chefprojet { get; set; }
         private bool _sujetAcheve { get; set; }
         private double _note { get; set; }
 
-        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Eleve> eleves, List<Exterieur> intervenants, List<Matiere> matieres, Eleve chefprojet)
+        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants, List<Matiere> matieres, Eleve chefprojet)
         {
+            _livrables = livrables;
             _nomProjet = nom;
             _duree = duree;
             _sujetLibre = sujetlibre;
@@ -90,12 +92,36 @@ namespace _projet
             }
         }
 
+        public void ajoutLivrable(Livrable L1)
+        {
+            int counter = 0;
+            foreach (Livrable element in _livrables)
+            {
+                if (element != null)
+                {
+                    _livrables[counter] = L1;
+                    counter++;
+                }
+            }
+        }
+
+        public void supprimeLivrable(Livrable L1)
+        {
+            int counter = 0;
+            foreach (Livrable element in _livrables)
+            {
+                if (element == L1) _livrables[counter] = null;
+                counter++;
+            }
+        }
+
         public override string ToString()
         {
-            string res = " ";
+            string res = "";
             res = res + "Nom du projet : " + _nomProjet + "\n";
             res = res + "Durée du projet :" + _duree + "\n";
-            res = res + "Type de sujet :" + _sujetLibre + "\n";
+            if (_sujetLibre == true) res = res + "Sujet libre \n";
+            else { res = res + "Sujet imposé \n"; }
             res = res + "Elèves participants : \n";
             foreach (Eleve element in _eleves)
             { res = res + element.ToString() + "\n"; }
@@ -106,6 +132,8 @@ namespace _projet
             foreach (Matiere element in _matieres)
             { res = res + element.ToString() + "\n"; }
             res = res + "Chef de Projet :" + _chefprojet + "\n";
+            if (_sujetAcheve == true) res = res + "Statut du projet : achevé \n";
+            else { res = res + "Statut du sujet : en cours \n "; }
             res = res + "Sujet Achevé : " + _sujetAcheve + "\n";
             if (_sujetAcheve == true) res = res + "Note : " + _note + "\n";
             return res;
