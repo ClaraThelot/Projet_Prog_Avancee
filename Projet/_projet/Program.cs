@@ -138,24 +138,25 @@ namespace _projet
                 note = double.Parse(information[3]);
                 acheve = bool.Parse(information[4]);
                 int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
-                int choix = 0;
+                int choix=0;
                 foreach (Matiere element in Matieres)
                 {
-                
-                    if(information[5]==element._nom)
+                    
+                    if (element._nom==information[5])
                     {
                         choix = elementi;
                     }
                     elementi++;
                 }
+               
                 matconcernee.Add(Matieres[choix]);
+
                 for (int i = 6; i < information.Length; i++)
                 {
-                    int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
-                    int choix2 = 0;
                     if (information[i][0] == 'E')
                     {
-
+                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                        int choix2 = 0;
                         int start = 1;
                         string nomparticipant = information[i].Substring(start);
                         foreach (Eleve element in Eleves)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
@@ -170,11 +171,13 @@ namespace _projet
                             }
                             element2 += 1;
                         }
-                        eparticipant.Add(Eleves[choix]);
+                        eparticipant.Add(Eleves[choix2]);
                     }
                     if (information[i][0] == 'P')
                     {
                         int start = 1;
+                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                        int choix2 = 0;
                         string nomparticipant = information[i].Substring(start);
                         foreach (Exterieur element in Exterieurs)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
                         {
@@ -193,6 +196,8 @@ namespace _projet
                     if(information[i][0] == 'C')
                     {
                         int start = 1;
+                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                        int choix2 = 0;
                         string nomparticipant = information[i].Substring(start);
                         foreach (Eleve element in Eleves)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
                         {
@@ -209,7 +214,6 @@ namespace _projet
                         chef = Eleves[choix2];
                     }
                 }
-
                 Projet ajout = new Projet(nom, duree, sujetlibre,note, acheve, eparticipant, pparticipant, matconcernee, chef);
                 Projets.Add(ajout);
                 foreach (Projet element in Projets)

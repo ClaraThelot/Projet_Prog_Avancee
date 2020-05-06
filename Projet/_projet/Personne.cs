@@ -10,7 +10,7 @@ namespace _projet
     {
         public string nom { get ;  }
         public string prenom { get;  }
-        public Projet[] projet { get; set; }
+        public List<Projet>projet { get; set; }
 
         public Personne()
         {
@@ -23,7 +23,7 @@ namespace _projet
             prenom = Prenom;
         }
 
-        public Personne(string Nom, string Prenom, Projet[] Proj)
+        public Personne(string Nom, string Prenom, List<Projet>Proj)
         {
             nom = Nom;
             prenom = Prenom;

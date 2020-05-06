@@ -16,9 +16,9 @@ namespace _projet
             entreprise = Entreprise;
         }
 
-        public Exterieur(string Nom, string Prenom, Projet[] Proj) : base(Nom, Prenom, Proj) { }
+        public Exterieur(string Nom, string Prenom, List<Projet>     Proj) : base(Nom, Prenom, Proj) { }
 
-        public Exterieur(string Nom, string Prenom, Projet[] Proj, string Metier, string Entreprise) : base(Nom, Prenom, Proj)
+        public Exterieur(string Nom, string Prenom, List<Projet> Proj, string Metier, string Entreprise) : base(Nom, Prenom, Proj)
         {
             metier = Metier;
             entreprise = Entreprise;
@@ -31,9 +31,11 @@ namespace _projet
             res = res + "Métier : " + metier + "\n";
             res = res + "Lieu d'emploi en dehors de l'ENSC : " + entreprise + "\n";
             res = res + "Liste des projets en cours : \n";
-            /*for (int i = 1; i < projet.Length + 1; i++)
+            int i = 0;
+            /*foreach (Projet element in projet)
             {
-                res = res + "Projet n°" + i + " : " + projet[i - 1] + "/n";
+                res = res + "Projet n°" + i + " : " + projet[i - 1] + "\n";
+                i++;
             }*/
 
             return res;

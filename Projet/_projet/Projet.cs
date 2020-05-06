@@ -96,9 +96,15 @@ namespace _projet
             res = res + "Nom du projet : " + _nomProjet + "\n";
             res = res + "Durée du projet :" + _duree + "\n";
             res = res + "Type de sujet :" + _sujetLibre + "\n";
-            res = res + "Elèves participants :" + _eleves.ToString() + "\n";
-            res = res + "Intervenants  " + _intervenants.ToString() + "\n";
-            res = res + "Matières concernées :" + _matieres.ToString() + "\n";
+            res = res + "Elèves participants : \n";
+            foreach (Eleve element in _eleves)
+            { res = res + element.ToString() + "\n"; }
+            res = res + "Intervenants : \n ";
+            foreach (Exterieur element in _intervenants)
+            { res=res+ element.ToString() + "\n"; }
+            res = res + "Matières concernées : \n";
+            foreach (Matiere element in _matieres)
+            { res = res + element.ToString() + "\n"; }
             res = res + "Chef de Projet :" + _chefprojet + "\n";
             res = res + "Sujet Achevé : " + _sujetAcheve + "\n";
             if (_sujetAcheve == true) res = res + "Note : " + _note + "\n";

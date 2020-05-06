@@ -19,9 +19,9 @@ namespace _projet
             _groupeTD = groupeTD;
         }
             
-        public Eleve(string Nom, string Prenom, Projet[] Proj) : base(Nom, Prenom, Proj) { }
+        public Eleve(string Nom, string Prenom, List<Projet> Proj) : base(Nom, Prenom, Proj) { }
 
-            public Eleve(string Nom, string Prenom, Projet[] Proj, string Annee, int Promo, int Groupe) : base(Nom, Prenom, Proj)
+            public Eleve(string Nom, string Prenom, List<Projet> Proj, string Annee, int Promo, int Groupe) : base(Nom, Prenom, Proj)
             {
                 _annee = Annee;
                 _promo = Promo;
@@ -30,15 +30,26 @@ namespace _projet
 
         public void ajoutProjet(Projet P1)
         {
-            for (int i = 0; i < projet.Length; i++)
+            int i = 0;
+            int place = 0;
+            foreach(Projet element in projet)
             {
-                if (projet[i] != null) { projet[i] = P1; }
+                if (projet[i] != null) { place = i; }
+                i++;
             }
+            projet[place] = P1;
+
         }
         public void supprimeProjet(Projet P1)
         {
-            for (int i = 0; i < projet.Length; i++)
-            { if (projet[i] == P1) projet[i] = null; }
+            int i = 0;
+            int place = 0;
+            foreach (Projet element in projet)
+            {
+                if (projet[i] == P1) { place = i; }
+                i++;
+            }
+                projet[place] = null; 
         }
         public override string ToString()
             {
@@ -49,9 +60,11 @@ namespace _projet
                 res = res + "Promo " + _promo + "\n";
                 res = res + "Groupe de TD : " + _groupeTD + "\n";
                 res = res + "Liste des projets en cours : \n";
-                /*for (int i = 1; i < projet.Length + 1; i++)
+                int i = 0;
+                /*foreach(Projet element in projet)
                 {
-                    res = res + "Projet n°" + i + " : " + projet[i - 1] + "/n";
+                    res = res + "Projet n°" + i + " : " + projet[i].ToString() + "\n";
+                    i++;
                 }*/
 
                 return res;
