@@ -8,34 +8,34 @@ namespace _projet
 {
     class Exterieur : Personne
     {
-        public string metier { get; set; }
-        public string entreprise { get; set; }
+        public string _metier { get; set; }
+        public string _entreprise { get; set; }
 
         public Exterieur (string Nom, string Prenom, string Metier, string Entreprise) : base (Nom, Prenom) 
         {
-            metier = Metier;
-            entreprise = Entreprise;
+            _metier = Metier;
+            _entreprise = Entreprise;
         }
 
-        public Exterieur(string Nom, string Prenom, List<Projet>     Proj) : base(Nom, Prenom, Proj) { }
+        public Exterieur(string Nom, string Prenom, List<Projet> Proj) : base(Nom, Prenom, Proj) { }
 
         public Exterieur(string Nom, string Prenom, List<Projet> Proj, string Metier, string Entreprise) : base(Nom, Prenom, Proj)
         {
-            metier = Metier;
-            entreprise = Entreprise;
+            _metier = Metier;
+            _entreprise = Entreprise;
         }
         public override string ToString()
         {
             string res = "";
-            res = res + "Nom : " + nom + "\n";
-            res = res + "Prénom : " + prenom + "\n";
-            res = res + "Métier : " + metier + "\n";
-            res = res + "Lieu d'emploi en dehors de l'ENSC : " + entreprise + "\n";
+            res = res + "Nom : " + _nom + "\n";
+            res = res + "Prénom : " + _prenom + "\n";
+            res = res + "Métier : " + _metier + "\n";
+            res = res + "Lieu d'emploi en dehors de l'ENSC : " + _entreprise + "\n";
             res = res + "Liste des projets en cours : \n";
             int i = 0;
-            /*foreach (Projet element in projet)
+            /*foreach (Projet element in _projet)
             {
-                res = res + "Projet n°" + i + " : " + projet[i - 1] + "\n";
+                res = res + "Projet n°" + i + " : " + _projet[i - 1] + "\n";
                 i++;
             }*/
 

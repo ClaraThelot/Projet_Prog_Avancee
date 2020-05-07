@@ -8,36 +8,36 @@ namespace _projet
 {
     class Personne
     {
-        public string nom { get ;  }
-        public string prenom { get;  }
-        public List<Projet>projet { get; set; }
+        public string _nom { get ;  }
+        public string _prenom { get;  }
+        public List<Projet> _projet { get; set; }
 
         public Personne()
         {
-            nom = "didier";
-            prenom = "didier";
+            _nom = "didier";
+            _prenom = "didier";
         }
         public Personne(string Nom, string Prenom)
         {
-            nom = Nom;
-            prenom = Prenom;
+            _nom = Nom;
+            _prenom = Prenom;
         }
 
         public Personne(string Nom, string Prenom, List<Projet>Proj)
         {
-            nom = Nom;
-            prenom = Prenom;
-            projet = Proj;
+            _nom = Nom;
+            _prenom = Prenom;
+            _projet = Proj;
         }
         public override string ToString()
         {
             string res = " ";
-            res = res + "Nom : " + nom + "\n" ;
-            res = res + "Prénom : " + prenom + "\n";
+            res = res + "Nom : " + _nom + "\n" ;
+            res = res + "Prénom : " + _prenom + "\n";
             res = res + "Liste des projets en cours : \n";
-            /*for (int i = 1; i < projet.Length + 1; i++)
+            /*for (int i = 1; i < _projet.Length + 1; i++)
             {
-                res = res + "Projet n°" + i + " : " + projet[i - 1] + "/n";
+                res = res + "Projet n°" + i + " : " + _projet[i - 1] + "/n";
             }*/
 
             return res;

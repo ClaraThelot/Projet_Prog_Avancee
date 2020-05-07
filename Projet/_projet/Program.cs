@@ -71,10 +71,7 @@ namespace _projet
                     {
                         choix = elementi;
                     }
-                    else
-                    {
-                        
-                    }
+                    
                     elementi += 1;
                 }
                 mate = Matieres[choix];
@@ -141,15 +138,13 @@ namespace _projet
                 int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
                 int choix=0;
                 foreach (Matiere element in Matieres)
-                {
-                    
+                { 
                     if (element._nom==information[5])
                     {
                         choix = elementi;
                     }
                     elementi++;
                 }
-               
                 matconcernee.Add(Matieres[choix]);
 
                 for (int i = 6; i < information.Length; i++)
@@ -162,13 +157,9 @@ namespace _projet
                         string nomparticipant = information[i].Substring(start);
                         foreach (Eleve element in Eleves)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
                         {
-                            if (element.nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            if (element._nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
                             {
                                 choix2 = element2;
-                            }
-                            else
-                            {
-
                             }
                             element2 += 1;
                         }
@@ -182,13 +173,9 @@ namespace _projet
                         string nomparticipant = information[i].Substring(start);
                         foreach (Exterieur element in Exterieurs)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
                         {
-                            if (element.nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            if (element._nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
                             {
                                 choix2 = element2;
-                            }
-                            else
-                            {
-
                             }
                             element2 += 1;
                         }
@@ -206,10 +193,6 @@ namespace _projet
                             {
                                 choix2 = element2;
                             }
-                            else
-                            {
-
-                            }
                             element2 += 1;
                         }
                         llivrable.Add(Livrables[choix2]);
@@ -222,13 +205,9 @@ namespace _projet
                         string nomparticipant = information[i].Substring(start);
                         foreach (Eleve element in Eleves)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
                         {
-                            if (element.nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            if (element._nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
                             {
                                 choix2 = element2;
-                            }
-                            else
-                            {
-
                             }
                             element2 += 1;
                         }

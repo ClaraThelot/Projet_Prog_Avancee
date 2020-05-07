@@ -32,40 +32,40 @@ namespace _projet
         {
             int i = 0;
             int place = 0;
-            foreach(Projet element in projet)
+            foreach(Projet element in _projet)
             {
-                if (projet[i] != null) { place = i; }
+                if (_projet[i] != null) { place = i; }
                 i++;
             }
-            projet[place] = P1;
+            _projet[place] = P1;
 
         }
         public void supprimeProjet(Projet P1)
         {
             int i = 0;
             int place = 0;
-            foreach (Projet element in projet)
+            foreach (Projet element in _projet)
             {
-                if (projet[i] == P1) { place = i; }
+                if (_projet[i] == P1) { place = i; }
                 i++;
             }
-                projet[place] = null; 
+                _projet[place] = null; 
         }
         public override string ToString()
             {
                 string res = "";
-                res = res + "Nom : " + nom + "\n";
-                res = res + "Prénom : " + prenom + "\n";
+                res = res + "Nom : " + _nom + "\n";
+                res = res + "Prénom : " + _prenom + "\n";
                 res = res + "Année : " + _annee + "\n";
                 res = res + "Promo " + _promo + "\n";
                 res = res + "Groupe de TD : " + _groupeTD + "\n";
                 res = res + "Liste des projets en cours : \n";
                 int i = 0;
-                /*foreach(Projet element in projet)
+                foreach(Projet element in _projet)
                 {
-                    res = res + "Projet n°" + i + " : " + projet[i].ToString() + "\n";
+                    res = res + "Projet n°" + i + " : " + _projet[i].ToString() + "\n";
                     i++;
-                }*/
+                }
 
                 return res;
             }
