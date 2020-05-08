@@ -4,22 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _projet
+namespace ConsoleApp1
 {
     class Projet
     {
-        public string _nomProjet { get; }
+        private string _nomProjet { get; }
         private double _duree { get; set; }
         private bool _sujetLibre{ get; set; }
         private List<Eleve> _eleves { get; set; }
-        private List<Exterieur> _intervenants { get; set; }
+      /*  private List<Exterieur> _intervenants { get; set; }
         private List<Matiere> _matieres { get; set; }
-        private List <Livrable> _livrables { get; set; }
+        private List <Livrable> _livrables { get; set; }*/
         private Eleve _chefprojet { get; set; }
         private bool _sujetAcheve { get; set; }
         private double _note { get; set; }
 
-        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants, List<Matiere> matieres, Eleve chefprojet)
+
+        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve,  List<Eleve> eleves, Eleve chefprojet)
+        {
+            _nomProjet = nom;
+            _duree = duree;
+            _sujetLibre = sujetlibre;
+            _eleves = eleves;
+            _chefprojet = chefprojet;
+            _sujetAcheve = sujetAcheve;
+            _note = note;
+        }
+        /*public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants, List<Matiere> matieres, Eleve chefprojet)
         {
             _livrables = livrables;
             _nomProjet = nom;
@@ -31,7 +42,7 @@ namespace _projet
             _chefprojet = chefprojet;
             _sujetAcheve = sujetAcheve;
             _note = note;
-        }
+        }*/
         public void ajoutEleve (Eleve E1)
         {
             int counter = 0;
@@ -51,7 +62,7 @@ namespace _projet
             } // Supprime un élève, par contre laisse un trou dans le tableau à l'endroit considéré
         }
 
-        public void ajoutMatiere(Matiere M1)
+        /*public void ajoutMatiere(Matiere M1)
         {
             int counter = 0;
             foreach(Matiere element in _matieres)
@@ -137,7 +148,7 @@ namespace _projet
             res = res + "Sujet Achevé : " + _sujetAcheve + "\n";
             if (_sujetAcheve == true) res = res + "Note : " + _note + "\n";
             return res;
-        }
+        }*/
 
     }
 }
