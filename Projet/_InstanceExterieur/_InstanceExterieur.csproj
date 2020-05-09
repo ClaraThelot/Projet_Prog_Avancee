@@ -50,10 +50,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\_InstanceEleve\_InstanceEleve.csproj">
-      <Project>{9d3b58de-9f5c-4847-994c-8b155cd1993d}</Project>
-      <Name>_InstanceEleve</Name>
-    </ProjectReference>
     <ProjectReference Include="..\_projet\_projet.csproj">
       <Project>{0a02fe91-42b8-40e2-85f9-9b960c2eabcc}</Project>
       <Name>_projet</Name>
