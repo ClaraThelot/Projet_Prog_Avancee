@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Personne
+    public class Personne
     {
 
                 public string _nom { get; }
@@ -22,6 +22,7 @@ namespace _projet
                 {
                     _nom = Nom;
                     _prenom = Prenom;
+                    _projet = new List<Projet>();
                 }
 
                 public Personne(string Nom, string Prenom, List<Projet> Proj)
@@ -36,10 +37,12 @@ namespace _projet
                     res = res + "Nom : " + _nom + "\n";
                     res = res + "Prénom : " + _prenom + "\n";
                     res = res + "Liste des projets en cours : \n";
-                    /*for (int i = 1; i < _projet.Length + 1; i++)
-                    {
-                        res = res + "Projet n°" + i + " : " + _projet[i - 1] + "/n";
-                    }*/
+            int i= 0;
+            foreach (Projet element in _projet)
+            {
+                res = res + "Projet n°" + i+ " : " + element._nomProjet+ "/n";
+                i++;
+            }
 
                     return res;
                 }

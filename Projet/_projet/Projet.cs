@@ -11,7 +11,7 @@ namespace _projet
         public string _nomProjet { get; }
         private double _duree { get; set; }
         private bool _sujetLibre{ get; set; }
-        private List<Eleve> _eleves { get; set; }
+        public List<Eleve> _eleves { get; set; }
         private List<Exterieur> _intervenants { get; set; }
         private List<Matiere> _matieres { get; set; }
         private List <Livrable> _livrables { get; set; }
@@ -34,13 +34,7 @@ namespace _projet
         }
         public void ajoutEleve (Eleve E1)
         {
-            int counter = 0;
-            foreach(Eleve element in _eleves)
-            {
-                if(element!=null)
-                {_eleves[counter] = E1; } //Si le tableau n'est pas vide, on ajoute un l'élève considéré 
-                counter++;
-            }
+            
         }
         public void supprimeEleve(Eleve E1)
         {

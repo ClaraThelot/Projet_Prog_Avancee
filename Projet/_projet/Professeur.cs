@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Professeur :Personne
+    public class Professeur :Personne
     {
         public Matiere _matieres { get; set; }                                                       // J'ai temporairement enlevé le fait que c'est un tableau
 

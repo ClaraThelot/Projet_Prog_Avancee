@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Eleves
-    {
+
         public class Eleve : Personne
         {
             public string _annee { get; set; }
@@ -33,14 +32,7 @@ namespace _projet
 
             public void ajoutProjet(Projet P1)
             {
-                int i = 0;
-                int place = 0;
-                foreach (Projet element in _projet)
-                {
-                    if (_projet[i] != null) { place = i; }
-                    i++;
-                }
-                _projet[place] = P1;
+            _projet.Add(P1);
 
             }
             public void supprimeProjet(Projet P1)
@@ -66,7 +58,7 @@ namespace _projet
                 int i = 0;
                 foreach (Projet element in _projet)
                 {
-                    res = res + "Projet n°" + i + " : " + _projet[i].ToString() + "\n";
+                    res = res + "Projet n°" + i+1 + " : " + element._nomProjet + "\n";
                     i++;
                 }
 
@@ -74,5 +66,4 @@ namespace _projet
             }
         }
     }
-}
-}
+
