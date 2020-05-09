@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Exterieur : Personne
+    public class Exterieur : Personne
     {
         public string _metier { get; set; }
         public string _entreprise { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Matiere
+    public class Matiere
     {
         public string _nom;
         private string _code;

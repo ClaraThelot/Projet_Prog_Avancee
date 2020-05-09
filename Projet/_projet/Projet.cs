@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Projet
+     public class Projet
     {
         public string _nomProjet { get; }
         private double _duree { get; set; }
