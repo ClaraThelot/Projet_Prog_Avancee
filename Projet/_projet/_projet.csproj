@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Eleve.cs" />
+    <Compile Include="Eleves.cs" />
     <Compile Include="Exterieur.cs" />
     <Compile Include="Livrable.cs" />
     <Compile Include="Matiere.cs" />
