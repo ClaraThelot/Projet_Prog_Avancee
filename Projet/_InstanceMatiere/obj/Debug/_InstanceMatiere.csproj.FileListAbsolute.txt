@@ -1,0 +1,8 @@
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\obj\Debug\_InstanceMatiere.csprojResolveAssemblyReference.cache
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\bin\Debug\_InstanceMatiere.exe.config
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\bin\Debug\_InstanceMatiere.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\bin\Debug\_InstanceMatiere.pdb
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\bin\Debug\_projet.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\bin\Debug\_projet.pdb
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\obj\Debug\_InstanceMatiere.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceMatiere\obj\Debug\_InstanceMatiere.pdb

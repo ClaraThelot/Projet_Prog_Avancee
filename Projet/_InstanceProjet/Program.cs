@@ -22,19 +22,19 @@ namespace _InstanceProjet
             char separateur = '*';
             string ligneP;
             List<Projet> Projets = new List<Projet>();
-            string nom;
-            int duree;
-            bool sujetlibre;
-            double note;
-            bool acheve;
-            List<Livrable> llivrable = new List<Livrable>();
-            List<Eleve> eparticipant = new List<Eleve>();
-            List<Exterieur> pparticipant = new List<Exterieur>();
-            List<Matiere> matconcernee = new List<Matiere>();
-            Eleve chef = new Eleve();
             System.IO.StreamReader file4 = new System.IO.StreamReader("Projets.txt");
             while ((ligneP = file4.ReadLine()) != null)
             {
+                string nom;
+                int duree;
+                bool sujetlibre;
+                double note;
+                bool acheve;
+                List<Livrable> llivrable = new List<Livrable>();
+                List<Eleve> eparticipant = new List<Eleve>();
+                List<Exterieur> pparticipant = new List<Exterieur>();
+                List<Matiere> matconcernee = new List<Matiere>();
+                Eleve chef = new Eleve();
                 String[] information = ligneP.Split(separateur);
                 nom = information[0];
                 duree = int.Parse(information[1]);
@@ -129,7 +129,19 @@ namespace _InstanceProjet
                     }
                 }
                 Projet ajout = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, matconcernee, chef);
-                Projets.Add(ajout);
+                foreach(Eleve element in eparticipant)
+                {
+                    foreach (Eleve element2 in Eleves)
+                    {
+                        if (element2._nom ==element._nom)
+                        {
+                            element2._projet.Add(ajout);
+                        }
+                }
+                }
+                Projet nouveau = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, matconcernee, chef);
+                Projets.Add(nouveau);
+
             }
             return Projets;
         }

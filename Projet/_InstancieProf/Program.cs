@@ -8,12 +8,12 @@ using _InstanceMatiere;
 
 namespace _InstancieProf
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
         }
-        static List<Professeur> instancieProfesseur()
+        public static List<Professeur> instancieProfesseur()
         {
             char separateur = '*';
             List<Matiere> Matieres = new List<Matiere>();
