@@ -8,8 +8,9 @@ using _InstanceExterieur;
 using _InstanceLivrable;
 using _InstanceMatiere;
 using _InstanceProjet;
+using _InstanceRole;
 using _projet;
-
+using RechercheLibre;
 
 namespace Menu
 {
@@ -18,6 +19,7 @@ namespace Menu
         static void Main(string[] args)
         {
             Menu();
+
         }
         static bool Menu()
         {
@@ -31,7 +33,8 @@ namespace Menu
             switch (Console.ReadLine())
             {
                 case "1":
-                    Console.WriteLine("A présent, tapez le mot-clef unique que vous souhaitez rechercher dans la base");
+                    RechercheLibre.Program.Recherche();
+                    //Console.WriteLine("A présent, tapez le mot-clef unique que vous souhaitez rechercher dans la base");
                     return false;
                 case "2":
                     Console.WriteLine("Voilà la liste des élèves répertoriés !");
@@ -89,13 +92,15 @@ namespace Menu
                     List<Projet> Proj = new List<Projet>();
                     Proj = _InstanceProjet.Program.instancieProjet();
                     foreach (Projet element in Proj)
-                    { Console.WriteLine(element.ToString());
-                                }
+                    {
+                        Console.WriteLine(element.ToString());
+                    }
                     return true;
                 default:
                     return false;
             }
         }
-     
     }
 }
+    
+

@@ -22,6 +22,14 @@ namespace _InstanceProjet
             char separateur = '*';
             string ligneP;
             List<Projet> Projets = new List<Projet>();
+            List<Matiere> Matieres = new List<Matiere>();
+            Matieres = _InstanceMatiere.Program.instancieMatiere();
+            List<Eleve> Eleves = new List<Eleve>();
+            Eleves = _InstanceEleve.Program.instancieEleve();
+            List<Livrable> Livrables = new List<Livrable>();
+            Livrables = _InstanceLivrable.Program.instancieLivrable();
+            List<Exterieur> Exterieurs = new List<Exterieur>();
+            Exterieurs = _InstanceExterieur.Program.instancieIntervenantE();
             System.IO.StreamReader file4 = new System.IO.StreamReader("Projets.txt");
             while ((ligneP = file4.ReadLine()) != null)
             {
@@ -43,14 +51,6 @@ namespace _InstanceProjet
                 acheve = bool.Parse(information[4]);
                 int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
                 int choix = 0;
-                List<Matiere> Matieres = new List<Matiere>();
-                Matieres = _InstanceMatiere.Program.instancieMatiere();
-                List<Eleve> Eleves = new List<Eleve>();
-                Eleves = _InstanceEleve.Program.instancieEleve();
-                List<Livrable> Livrables = new List<Livrable>();
-                Livrables = _InstanceLivrable.Program.instancieLivrable();
-                List<Exterieur> Exterieurs = new List<Exterieur>();
-                Exterieurs = _InstanceExterieur.Program.instancieIntervenantE();
                 foreach (Matiere element in Matieres)
                 {
                     if (element._nom == information[5])

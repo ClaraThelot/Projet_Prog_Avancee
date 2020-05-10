@@ -1,2 +1,2 @@
-Info * 3 * false * 18 * true *Probabilités*EPradal*EThelot*PBertrand*PRobert*CPradal
+Info* 3 * false * 18 * true *Probabilités*EPradal*EThelot*PBertrand*PRobert*CPradal
 Maths*1*true*12*false*Probabilités*EThelot*PBertrand*CThelot

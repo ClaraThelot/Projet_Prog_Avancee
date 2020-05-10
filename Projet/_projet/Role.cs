@@ -18,6 +18,8 @@ namespace _projet
         {
             _nom = nom;
             _code = code;
+            _projet = new Projet();
+            _personne = new Personne();
         }
         public Role(string nom, string code, Personne personne, Projet projet)
         {
@@ -29,7 +31,7 @@ namespace _projet
         public override string ToString()
         {
             string res = "";
-            res = res + "La personne "+_personne+"assume comme rôle "+_nom+" au sein du projet "+_projet+".\n";
+            res = res + "La personne "+_personne._nom+"assume comme rôle "+_nom+" au sein du projet "+_projet._nomProjet+".\n";
             return res;
         }
     }
