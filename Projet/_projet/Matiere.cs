@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    public class Matiere
+    public class Matiere : IAffichable
     {
         public string _nom;
         public string _code;
@@ -17,6 +17,13 @@ namespace _projet
             _nom = nom;
             _code = code;
             _UE = UE;
+        }
+
+        public void Affichage(object obj)
+        {
+            Console.WriteLine("Si vous souhaitez afficher le détail, tapez 1");
+            string s = (Console.ReadLine());
+            if (s == "1") Console.WriteLine(obj.ToString());
         }
 
         public override string ToString()

@@ -48,20 +48,14 @@ namespace _projet
             return res;
         }
 
-        public bool Affichage(object obj)
+        public void Affichage(object obj)
         {
             Console.WriteLine("Si vous souhaitez afficher le détail, tapez 1");
-            
-            switch (Console.ReadLine())
-            {
-                case "1": 
-                    obj.ToString();
-                    return true;
-                default:return false ;
-            }
-            
+            string s = (Console.ReadLine());
+            if (s == "1") Console.WriteLine(obj.ToString());
         }
     }
+
 }
 
     

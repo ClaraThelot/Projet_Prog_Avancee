@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    class Program
+   public class Program
     {
 
         

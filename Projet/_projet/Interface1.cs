@@ -8,6 +8,7 @@ namespace _projet
 {
     interface IAffichable
     {
-        bool Affichage(Object obj);
+        void Affichage(Object obj);
+        
     }
 }
