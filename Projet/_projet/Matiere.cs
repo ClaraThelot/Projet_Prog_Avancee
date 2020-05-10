@@ -9,8 +9,8 @@ namespace _projet
     public class Matiere
     {
         public string _nom;
-        private string _code;
-        private string _UE;
+        public string _code;
+        public string _UE;
 
         public Matiere(string nom, string code, string UE)
         {

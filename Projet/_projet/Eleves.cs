@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _projet
 {
 
-        public class Eleve : Personne
+        public class Eleve : Personne , IAffichable
         {
             public string _annee { get; set; }
             public int _promo { get; set; }
@@ -64,6 +64,19 @@ namespace _projet
 
                 return res;
             }
+        public bool Affichage(object obj)
+        {
+            Console.WriteLine("Si vous souhaitez afficher le détail, tapez 1");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    obj.ToString();
+                    return true;
+                default: return false;
+            }
+
         }
+    }
     }
 

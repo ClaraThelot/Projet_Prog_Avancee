@@ -9,15 +9,15 @@ namespace _projet
      public class Projet
     {
         public string _nomProjet { get; }
-        private double _duree { get; set; }
-        private bool _sujetLibre{ get; set; }
+        public double _duree { get; set; }
+        public bool _sujetLibre{ get; set; }
         public List<Eleve> _eleves { get; set; }
-        private List<Exterieur> _intervenants { get; set; }
-        private List<Matiere> _matieres { get; set; }
-        private List <Livrable> _livrables { get; set; }
-        private Eleve _chefprojet { get; set; }
-        private bool _sujetAcheve { get; set; }
-        private double _note { get; set; }
+        public List<Exterieur> _intervenants { get; set; }
+        public List<Matiere> _matieres { get; set; }
+        public List <Livrable> _livrables { get; set; }
+        public Eleve _chefprojet { get; set; }
+        public bool _sujetAcheve { get; set; }
+        public double _note { get; set; }
 
         
         public Projet()

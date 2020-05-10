@@ -8,7 +8,7 @@ namespace _projet
 {
     public class Livrable
     {
-        private string _type { get; set; }
+        public string _type { get; set; }
         public string _echeance { get; set; }
 
         public Livrable( string type, string echeance)

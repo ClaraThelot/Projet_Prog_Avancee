@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Eleves.cs" />
     <Compile Include="Exterieur.cs" />
+    <Compile Include="Interface1.cs" />
     <Compile Include="Livrable.cs" />
     <Compile Include="Matiere.cs" />
     <Compile Include="Personne.cs" />

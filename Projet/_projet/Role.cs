@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
+    
     public class Role
     {
         public string _nom;
