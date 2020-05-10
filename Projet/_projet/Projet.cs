@@ -19,6 +19,11 @@ namespace _projet
         private bool _sujetAcheve { get; set; }
         private double _note { get; set; }
 
+        
+        public Projet()
+        {
+
+        }
         public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants, List<Matiere> matieres, Eleve chefprojet)
         {
             _livrables = livrables;
