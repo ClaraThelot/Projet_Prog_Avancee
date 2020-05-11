@@ -56,3 +56,5 @@ C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Menu\bin\Debug\RechercheLibre.exe.config
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Menu\bin\Debug\_InstanceRole.pdb
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Menu\bin\Debug\_InstanceRole.exe.config
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Rattachement.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Rattachement.pdb

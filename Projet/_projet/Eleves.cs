@@ -33,7 +33,6 @@ namespace _projet
             public void ajoutProjet(Projet P1)
             {
             _projet.Add(P1);
-
             }
             public void supprimeProjet(Projet P1)
             {
@@ -46,6 +45,7 @@ namespace _projet
                 }
                 _projet[place] = null;
             }
+
             public override string ToString()
             {
                 string res = "";
@@ -58,7 +58,7 @@ namespace _projet
                 int i = 0;
                 foreach (Projet element in _projet)
                 {
-                    res = res + "Projet n°" + i+1 + " : " + element._nomProjet + "\n";
+                    res = res + "Projet n°" + (i+1) + " : " + element._nomProjet + "\n";
                     i++;
                 }
                 return res;

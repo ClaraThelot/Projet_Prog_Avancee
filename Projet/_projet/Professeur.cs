@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace _projet
 {
     public class Professeur :Personne
@@ -20,7 +21,10 @@ namespace _projet
         {
             _matieres = Matiere;
         }
-
+        public void ajoutProjet(Projet P1)
+        {
+            _projet.Add(P1);
+        }
         public override string ToString()
         {
             string res = " ";
@@ -30,11 +34,11 @@ namespace _projet
             res = res + _matieres;
             res = res + "\nListe des projets en cours : \n";
             int i = 0;
-            /*foreach (Projet element in _projet)
+            foreach (Projet element in _projet)
             {
-                res = res + "Projet n°" + i + " : " + _projet[i - 1] + " \n";
+                res = res + "Projet n°" + (i+1) + " : " + element._nomProjet + " \n";
                 i++;
-            }*/
+            }
 
             return res;
         }

@@ -11,6 +11,7 @@ using _InstanceProjet;
 using _InstanceRole;
 using _projet;
 using RechercheLibre;
+using Rattachement;
 
 namespace Menu
 {
@@ -40,7 +41,7 @@ namespace Menu
                 case "2":
                     Console.WriteLine("Voilà la liste des élèves répertoriés !");
                     List<Eleve> Eleves = new List<Eleve>();
-                    Eleves = _InstanceEleve.Program.instancieEleve();
+                    Eleves = Rattachement.Program.RattacheEleve();
                     Console.WriteLine("1A :");
                     foreach (Eleve element in Eleves)
                     { if (element._annee == "1A")
@@ -70,7 +71,7 @@ namespace Menu
                     { if (element._annee != "1A" && element._annee != "2A" && element._annee != "3A")
                         {
                             Console.Write(element._nom);
-                            Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez " + Eleves.IndexOf(element));
+                            Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez " + Eleves.IndexOf(element)+ "\r\n");
                         }
                     }
                     int numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
@@ -80,7 +81,7 @@ namespace Menu
                 case "3":
                     Console.WriteLine("Voilà la liste des intervenants extérieurs répertoriés !");
                     List<Exterieur> Exte = new List<Exterieur>();
-                    Exte = _InstanceExterieur.Program.instancieIntervenantE();
+                    Exte = Rattachement.Program.RattacheExte();
                     foreach (Exterieur element in Exte)
                     {
                         Console.Write(element._nom);
@@ -93,7 +94,7 @@ namespace Menu
 
                 case "4":
                     List<Professeur> Prof = new List<Professeur>();
-                    Prof = _InstancieProf.Program.instancieProfesseur();
+                    Prof = Rattachement.Program.RattacheProf();
                     Console.WriteLine("Vous avez choisi de rechercher des professeurs !");
                     Console.WriteLine("Si vous voulez les voir s'afficher par matière, tapez 1, si vous les voulez par nom, tapez 2 !");
                     switch (Console.ReadLine())

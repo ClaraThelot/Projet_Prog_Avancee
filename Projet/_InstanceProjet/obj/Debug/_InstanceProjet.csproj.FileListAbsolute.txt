@@ -36,3 +36,5 @@ C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceProjet\obj\Debug\_InstanceProjet.csproj.CopyComplete
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceProjet\obj\Debug\_InstanceProjet.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceProjet\obj\Debug\_InstanceProjet.pdb
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceProjet\bin\Debug\_InstancieProf.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\_InstanceProjet\bin\Debug\_InstancieProf.pdb

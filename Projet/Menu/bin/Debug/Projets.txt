@@ -1,2 +1,2 @@
-Info* 3 * false * 18 * true *Probabilités*EPradal*EThelot*PBertrand*PRobert*CPradal
-Maths*1*true*12*false*Probabilités*EThelot*PBertrand*CThelot
+Info* 3 * false * 18 * true *Probabilités*EPradal*EThelot*PBertrand*PRobert*CPradal*L2020/05/04*MSolomas
+Maths*1*true*12*false*Probabilités*EThelot*PBertrand*CThelot*L2020/05/04

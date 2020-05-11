@@ -11,6 +11,7 @@ using _InstanceProjet;
 using _InstanceRole;
 using _InstancieProf;
 using _projet;
+using Rattachement;
 
 namespace RechercheLibre
 {
@@ -18,19 +19,20 @@ namespace RechercheLibre
     {
         static void Main(string[] args)
         { }
+
       
         public static void Recherche()
         {
             Console.WriteLine("Veuillez saisir ce que vous recherchez");
             string recherche = Console.ReadLine();
             List<Exterieur> Exte = new List<Exterieur>();
-            Exte = _InstanceExterieur.Program.instancieIntervenantE(); // Pareil avec les intervenants exté
+            Exte = Rattachement.Program.RattacheExte(); // Pareil avec les intervenants exté
             List<Professeur> Prof = new List<Professeur>();
-            Prof = _InstancieProf.Program.instancieProfesseur();
+            Prof = Rattachement.Program.RattacheProf();
             List<Matiere> Matieres = new List<Matiere>();
             Matieres = _InstanceMatiere.Program.instancieMatiere();
             List<Eleve> Eleves = new List<Eleve>();
-            Eleves = _InstanceEleve.Program.instancieEleve();
+            Eleves = Rattachement.Program.RattacheEleve();
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet(); // On instancie la liste des projets.
             List<Livrable> Livrables = new List<Livrable>();

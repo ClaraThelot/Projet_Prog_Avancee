@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Rattachement\Rattachement.csproj">
+      <Project>{deb269bd-7d56-478c-88d7-d4e07b841fe1}</Project>
+      <Name>Rattachement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RechercheLibre\RechercheLibre.csproj">
       <Project>{611535bb-6c83-4cb5-b941-58ed976da93a}</Project>
       <Name>RechercheLibre</Name>

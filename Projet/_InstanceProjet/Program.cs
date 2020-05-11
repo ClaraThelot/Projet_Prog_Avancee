@@ -8,6 +8,7 @@ using _InstanceEleve;
 using _InstanceExterieur;
 using _InstanceMatiere;
 using _InstanceLivrable;
+using _InstancieProf;
 
 
 namespace _InstanceProjet
@@ -30,6 +31,8 @@ namespace _InstanceProjet
             Livrables = _InstanceLivrable.Program.instancieLivrable();
             List<Exterieur> Exterieurs = new List<Exterieur>();
             Exterieurs = _InstanceExterieur.Program.instancieIntervenantE();
+            List<Professeur> Professeurs = new List<Professeur>();
+            Professeurs = _InstancieProf.Program.instancieProfesseur();
             System.IO.StreamReader file4 = new System.IO.StreamReader("Projets.txt");
             while ((ligneP = file4.ReadLine()) != null)
             {
@@ -42,6 +45,7 @@ namespace _InstanceProjet
                 List<Eleve> eparticipant = new List<Eleve>();
                 List<Exterieur> pparticipant = new List<Exterieur>();
                 List<Matiere> matconcernee = new List<Matiere>();
+                List<Professeur> prof = new List<Professeur>();
                 Eleve chef = new Eleve();
                 String[] information = ligneP.Split(separateur);
                 nom = information[0];
@@ -127,8 +131,24 @@ namespace _InstanceProjet
                         }
                         chef = Eleves[choix2];
                     }
+                    if(information[i][0]=='M')
+                    {
+                        int start = 1;
+                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                        int choix2 = 0;
+                        string nomprof = information[i].Substring(start);
+                        foreach (Professeur element in Professeurs)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
+                        {
+                            if (element._nom == nomprof)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            {
+                                choix2 = element2;
+                            }
+                            element2 += 1;
+                        }
+                        prof.Add(Professeurs[choix2]);
+                    }
                 }
-                Projet ajout = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, matconcernee, chef);
+                Projet ajout = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
                 foreach(Eleve element in eparticipant)
                 {
                     foreach (Eleve element2 in Eleves)
@@ -139,7 +159,7 @@ namespace _InstanceProjet
                         }
                 }
                 }
-                Projet nouveau = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, matconcernee, chef);
+                Projet nouveau = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
                 Projets.Add(nouveau);
 
             }

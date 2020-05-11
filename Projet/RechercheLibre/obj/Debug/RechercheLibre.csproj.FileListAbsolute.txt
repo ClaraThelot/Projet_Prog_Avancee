@@ -51,3 +51,5 @@ C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\RechercheLibre\obj\Debug\RechercheLibre.csproj.CopyComplete
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\RechercheLibre\obj\Debug\RechercheLibre.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\RechercheLibre\obj\Debug\RechercheLibre.pdb
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\RechercheLibre\bin\Debug\Rattachement.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\RechercheLibre\bin\Debug\Rattachement.pdb
