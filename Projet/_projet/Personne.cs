@@ -54,6 +54,13 @@ namespace _projet
             string s = (Console.ReadLine());
             if (s == "1") Console.WriteLine(obj.ToString());
         }
+       
+
+        public void AffichageDepuisListe(object obj, List<object> List)
+        {
+            int numero = int.Parse(Console.ReadLine());
+           if (numero == 1) Console.WriteLine(obj.ToString());
+        }
     }
 
 }

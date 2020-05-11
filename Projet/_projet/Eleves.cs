@@ -61,7 +61,6 @@ namespace _projet
                     res = res + "Projet n°" + i+1 + " : " + element._nomProjet + "\n";
                     i++;
                 }
-
                 return res;
             }
     }

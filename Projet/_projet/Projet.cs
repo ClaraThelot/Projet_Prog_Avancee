@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-     public class Projet
+     public class Projet : IAffichable
     {
         public string _nomProjet { get; }
         public double _duree { get; set; }
@@ -138,5 +138,38 @@ namespace _projet
             return res;
         }
 
+        public void Affichage(object obj)
+        {
+            Console.WriteLine("Nom du projet: " + _nomProjet);
+            Console.WriteLine("Durée du projet :" + _duree);
+            if (_sujetLibre == true) Console.WriteLine("Sujet imposé");
+            Console.WriteLine("Eleves participant : ");
+            foreach (Eleve element in _eleves)
+            {
+                Console.Write(element._nom);
+                Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez " + _eleves.IndexOf(element));
+            }
+            Console.WriteLine("Intervenants participant : ");
+            foreach (Exterieur element in _intervenants)
+            {
+                Console.Write(element._nom);
+                Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + _intervenants.IndexOf(element));
+            }
+            Console.WriteLine("Matières concernées :");
+            foreach(Matiere element in _matieres)
+            { Console.WriteLine(element._nom); } //Dans un premier tps
+            Console.WriteLine("Chef de projet : "+_chefprojet+ "     Si vous voulez en savoir plus sur cet élève, tapez " + _eleves.IndexOf(_chefprojet));
+            if (_sujetAcheve == true)
+            {
+                Console.WriteLine("Statut du projet : achevé");
+                Console.WriteLine("Note : " + _note);
+            }
+            else { Console.WriteLine("Statut du sujet : en cours"); }
+        }
+
+        public void AffichageDepuisListe(object obj, List<object> List)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

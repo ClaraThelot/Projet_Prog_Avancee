@@ -43,23 +43,52 @@ namespace Menu
                     Eleves = _InstanceEleve.Program.instancieEleve();
                     Console.WriteLine("1A :");
                     foreach (Eleve element in Eleves)
-                    { if (element._annee == "1A") Console.WriteLine(element._nom); }
+                    { if (element._annee == "1A")
+                        {
+                            Console.Write(element._nom);
+                            Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez "+Eleves.IndexOf(element));
+                        }
+                    }
                     Console.WriteLine("2A :");
                     foreach (Eleve element in Eleves)
-                    { if (element._annee == "2A") Console.WriteLine(element._nom); }
+                    { if (element._annee == "2A")
+                        {
+                            Console.Write(element._nom);
+                            Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez " + Eleves.IndexOf(element));
+                        }
+                    }
                     Console.WriteLine("3A :");
                     foreach (Eleve element in Eleves)
-                    { if (element._annee == "3A") Console.WriteLine(element._nom); }
+                    { if (element._annee == "3A")
+                        {
+                            Console.Write(element._nom);
+                            Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez " + Eleves.IndexOf(element));
+                        }
+                    }
                     Console.WriteLine("Eleves ayant un autre statut :");
                     foreach (Eleve element in Eleves)
-                    { if (element._annee != "1A" && element._annee != "2A" && element._annee != "3A") Console.WriteLine(element._nom); }
+                    { if (element._annee != "1A" && element._annee != "2A" && element._annee != "3A")
+                        {
+                            Console.Write(element._nom);
+                            Console.WriteLine("     Si vous voulez en savoir plus sur cet élève, tapez " + Eleves.IndexOf(element));
+                        }
+                    }
+                    int numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
+                    foreach (Eleve element in Eleves)
+                    { if (numerochoisi == Eleves.IndexOf(element)) Console.WriteLine(element.ToString()); }
                     return true;
                 case "3":
                     Console.WriteLine("Voilà la liste des intervenants extérieurs répertoriés !");
                     List<Exterieur> Exte = new List<Exterieur>();
                     Exte = _InstanceExterieur.Program.instancieIntervenantE();
                     foreach (Exterieur element in Exte)
-                    { Console.WriteLine(element._nom); }
+                    {
+                        Console.Write(element._nom);
+                        Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Exte.IndexOf(element));
+                    }
+                    numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
+                    foreach (Exterieur element in Exte)
+                    { if (numerochoisi == Exte.IndexOf(element)) Console.WriteLine(element.ToString()); }
                     return true;
 
                 case "4":
@@ -77,25 +106,41 @@ namespace Menu
                                 Console.WriteLine("Matière enseignée : " + element._nom);
                                 foreach (Professeur prof in Prof)
                                 {
-                                    if (prof._matieres._nom == element._nom) Console.WriteLine(prof._nom); //Pour l'instant ne marche que pcq le _matieres des Profs n'est pas une liste mais un singleton
+                                    if (prof._matieres._nom == element._nom)
+                                    {
+                                        Console.Write(prof._nom);
+                                        Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Prof.IndexOf(prof));
+                                    }//Pour l'instant ne marche que pcq le _matieres des Profs n'est pas une liste mais un singleton
                                 }
                             }
+                            numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
+                            foreach (Professeur element in Prof)
+                            { if (numerochoisi == Prof.IndexOf(element)) Console.WriteLine(element.ToString()); }
                             return true;
                         case "2":
                             foreach (Professeur prof in Prof)
                             {
-                                Console.WriteLine(prof._nom); //Pour l'instant pas d'ordre alphabétique
+                                Console.Write(prof._nom);
+                                Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Prof.IndexOf(prof));//Pour l'instant pas d'ordre alphabétique
                             }
+                            numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
+                            foreach (Professeur element in Prof)
+                            { if (numerochoisi == Prof.IndexOf(element)) Console.WriteLine(element.ToString()); }
                             return true;
                         default: return false;
                     }
+                   
                 case "5":
                     List<Projet> Proj = new List<Projet>();
                     Proj = _InstanceProjet.Program.instancieProjet();
                     foreach (Projet element in Proj)
                     {
-                        Console.WriteLine(element.ToString());
+                        Console.Write(element._nomProjet);
+                        Console.WriteLine("     Si vous voulez en savoir plus sur ce projet, tapez " + Proj.IndexOf(element));
                     }
+                    numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
+                    foreach (Projet element in Proj)
+                    { if (numerochoisi == Proj.IndexOf(element)) element.Affichage(element); }
                     return true;
                 default:
                     return false;

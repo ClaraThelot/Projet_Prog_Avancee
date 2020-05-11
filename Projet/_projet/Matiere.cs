@@ -26,6 +26,13 @@ namespace _projet
             if (s == "1") Console.WriteLine(obj.ToString());
         }
 
+        public void AffichageDepuisListe(object obj, List<object> liste)
+        {
+            Console.WriteLine("Si vous souhaitez afficher le détail, tapez " + liste.IndexOf(obj));
+            string s = (Console.ReadLine());
+            if (s == "1") Console.WriteLine(obj.ToString());
+        }
+
         public override string ToString()
         {
             string res = " ";
