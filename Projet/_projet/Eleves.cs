@@ -30,10 +30,10 @@ namespace _projet
                 _groupeTD = Groupe;
             }
 
-            public void ajoutProjet(Projet P1)
+            /*public void ajoutProjet(Projet P1)
             {
             _projet.Add(P1);
-            }
+            }*/
             public void supprimeProjet(Projet P1)
             {
                 int i = 0;

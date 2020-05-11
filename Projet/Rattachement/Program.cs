@@ -33,9 +33,8 @@ namespace Rattachement
                 }
             }
             return Eleves;
-
         }
-
+        
         public static List<Exterieur> RattacheExte()
         {
             List < Exterieur > exterieur= new List<Exterieur>();

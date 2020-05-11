@@ -24,10 +24,10 @@ namespace _projet
             _metier = Metier;
             _entreprise = Entreprise;
         }
-        public void ajoutProjet(Projet P1)
+        /*public void ajoutProjet(Projet P1)
         {
             _projet.Add(P1);
-        }
+        }*/
         public override string ToString()
         {
             string res = "";

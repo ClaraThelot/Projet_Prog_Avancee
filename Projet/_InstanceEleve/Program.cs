@@ -12,6 +12,8 @@ namespace _InstanceEleve
         static void Main(string[] args)
         {
         }
+        
+        
         public static List<Eleve> instancieEleve()
         {
             char separateur = '*';

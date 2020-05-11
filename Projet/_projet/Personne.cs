@@ -54,7 +54,10 @@ namespace _projet
             string s = (Console.ReadLine());
             if (s == "1") Console.WriteLine(obj.ToString());
         }
-       
+        public void ajoutProjet(Projet P1)
+        {
+            _projet.Add(P1);
+        }
 
         public void AffichageDepuisListe(object obj, List<object> List)
         {

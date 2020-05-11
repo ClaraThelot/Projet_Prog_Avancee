@@ -21,10 +21,10 @@ namespace _projet
         {
             _matieres = Matiere;
         }
-        public void ajoutProjet(Projet P1)
+        /*public void ajoutProjet(Projet P1)
         {
             _projet.Add(P1);
-        }
+        }*/
         public override string ToString()
         {
             string res = " ";
