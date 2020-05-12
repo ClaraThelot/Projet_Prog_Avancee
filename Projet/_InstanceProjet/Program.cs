@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using _projet;
 using System.Threading.Tasks;
-using _InstanceEleve;
-using _InstanceExterieur;
+using _AffichageListes;
+using _InstancePersonne;
 using _InstanceMatiere;
 using _InstanceLivrable;
 using _InstancieProf;
@@ -26,13 +26,13 @@ namespace _InstanceProjet
             List<Matiere> Matieres = new List<Matiere>();
             Matieres = _InstanceMatiere.Program.instancieMatiere();
             List<Eleve> Eleves = new List<Eleve>();
-            Eleves = _InstanceEleve.Program.instancieEleve();
+            Eleves = _InstancePersonne.Program.instancieEleve();
             List<Livrable> Livrables = new List<Livrable>();
             Livrables = _InstanceLivrable.Program.instancieLivrable();
             List<Exterieur> Exterieurs = new List<Exterieur>();
-            Exterieurs = _InstanceExterieur.Program.instancieIntervenantE();
+            Exterieurs = _InstancePersonne.Program.instancieIntervenantE();
             List<Professeur> Professeurs = new List<Professeur>();
-            Professeurs = _InstancieProf.Program.instancieProfesseur();
+            Professeurs = _InstancePersonne.Program.instancieProfesseur();
             System.IO.StreamReader file4 = new System.IO.StreamReader("Projets.txt");
             while ((ligneP = file4.ReadLine()) != null)
             {

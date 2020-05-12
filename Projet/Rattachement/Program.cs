@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _InstanceEleve;
+using _AffichageListes;
 using _InstanceProjet;
 using _projet;
-using _InstanceExterieur;
+using _InstancePersonne;
 using _InstancieProf;
 
 namespace Rattachement
@@ -16,7 +16,7 @@ namespace Rattachement
         public static List<Eleve> RattacheEleve()
         {
             List<Eleve> Eleves = new List<Eleve>();
-            Eleves = _InstanceEleve.Program.instancieEleve();
+            Eleves = _InstancePersonne.Program.instancieEleve();
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet();
             foreach (Eleve element in Eleves)                                       // Parcourt tous les élèves
@@ -38,7 +38,7 @@ namespace Rattachement
         public static List<Exterieur> RattacheExte()
         {
             List < Exterieur > exterieur= new List<Exterieur>();
-            exterieur = _InstanceExterieur.Program.instancieIntervenantE();
+            exterieur = _InstancePersonne.Program.instancieIntervenantE();
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet();
         foreach(Exterieur element in exterieur)
@@ -59,7 +59,7 @@ namespace Rattachement
         public static List<Professeur> RattacheProf()
         {
             List<Professeur> professeur= new List<Professeur>();
-            professeur = _InstancieProf.Program.instancieProfesseur();
+            professeur = _InstancePersonne.Program.instancieProfesseur();
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet();
             foreach (Professeur element in professeur)

@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using _InstanceProjet;
 using _InstancieProf;
-using _InstanceEleve;
-using _InstanceExterieur;
+using _AffichageListes;
+using _InstancePersonne;
 using _projet;
 
 namespace Ajout
@@ -15,6 +15,18 @@ namespace Ajout
     {
         static void Main(string[] args)
         { }
+        public void AfficheEleves()
+        {
+            Console.WriteLine("Voilà la liste des élèves répertoriés !");
+            List<Eleve> TousEleves2 = new List<Eleve>();
+            TousEleves2 = _InstancePersonne.Program.instancieEleve();
+            foreach (Eleve element in TousEleves2)
+            {
+                Console.Write(element._nom);
+                Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + TousEleves2.IndexOf(element));
+            }
+        }
+        
         public static bool MenuAjout()
         {
             /* Console.WriteLine("Bienvenue sur le menu des ajouts !");
@@ -68,7 +80,7 @@ namespace Ajout
             string libre = Console.ReadLine();
             if (libre == "oui") { ligne = ligne + "true*"; }
             else { ligne = ligne + "false*"; }
-            Console.WriteLine("Mais dîtes moi, vous ne parlez pas d'un sujet déjà achevé ? (tapez 'si' ou 'non'");
+            Console.WriteLine("Mais dîtes moi, vous ne parlez pas d'un sujet déjà achevé ? (tapez 'si' ou 'non')");
             string fini = Console.ReadLine();
             if (fini == "si")
             {
@@ -91,7 +103,7 @@ namespace Ajout
                 foreach (Matiere element in TousMatieres)
                 {
                     Console.Write(element._nom);
-                    Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + TousMatieres.IndexOf(element));
+                    Console.WriteLine("     Si vous sélectionnez cette matière, tapez " + TousMatieres.IndexOf(element));
                 }
                 int numerochoisi = int.Parse(Console.ReadLine()); // fin de la fonction à factoriser
 
@@ -112,14 +124,15 @@ namespace Ajout
             {
                 Console.WriteLine("Tapez le code associé à l'élève du projet.");
                 //Affichage des élèves ->  à factoriser avec celle d'en dessous
-                Console.WriteLine("Voilà la liste des élèves répertoriés !");
-                List<Eleve> TousEleves2 = new List<Eleve>();
-                TousEleves2 = _InstanceEleve.Program.instancieEleve();
-                foreach (Eleve element in TousEleves2)
-                {
-                    Console.Write(element._nom);
-                    Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + TousEleves2.IndexOf(element));
-                }
+                 Console.WriteLine("Voilà la liste des élèves répertoriés !");
+                 List<Eleve> TousEleves2 = new List<Eleve>();
+                 TousEleves2 = _InstancePersonne.Program.instancieEleve();
+                 foreach (Eleve element in TousEleves2)
+                 {
+                     Console.Write(element._nom);
+                     Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + TousEleves2.IndexOf(element));
+                 }
+                //_AffichageListes.Program.AfficheEleves();
                 int numerochoisi3 = int.Parse(Console.ReadLine()); // fin de la fonction à factoriser
 
                 foreach (Eleve element in TousEleves2)
@@ -141,7 +154,7 @@ namespace Ajout
                 //Affichage des élèves ->  à factoriser avec celle d'en dessous
                 Console.WriteLine("Voilà la liste des extérieurs répertoriés !");
                 List<Exterieur> TousExte= new List<Exterieur>();
-                TousExte = _InstanceExterieur.Program.instancieIntervenantE();
+                TousExte = _InstancePersonne.Program.instancieIntervenantE();
                 foreach (Exterieur element in TousExte)
                 {
                     Console.Write(element._nom);
@@ -163,7 +176,7 @@ namespace Ajout
             //Affichage des élèves ->  à factoriser avec celle d'en dessous
             Console.WriteLine("Voilà la liste des élèves !");
             List<Eleve> TousEleves = new List<Eleve>();
-            TousEleves = _InstanceEleve.Program.instancieEleve();
+            TousEleves = _InstancePersonne.Program.instancieEleve();
             foreach (Eleve element in TousEleves)
             {
                 Console.Write(element._nom);
@@ -215,7 +228,7 @@ namespace Ajout
                 //Affichage des profs ->  à factoriser avec celle d'en dessous
                 Console.WriteLine("Voilà la liste des professeurs répertoriés !");
                 List<Professeur> TousProfs = new List<Professeur>();
-                TousProfs = _InstancieProf.Program.instancieProfesseur();
+                TousProfs = _InstancePersonne.Program.instancieProfesseur();
                 foreach (Professeur element in TousProfs)
                 {
                     Console.Write(element._nom);

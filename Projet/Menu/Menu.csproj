@@ -62,13 +62,13 @@
       <Project>{611535bb-6c83-4cb5-b941-58ed976da93a}</Project>
       <Name>RechercheLibre</Name>
     </ProjectReference>
-    <ProjectReference Include="..\_InstanceEleve\_InstanceEleve.csproj">
+    <ProjectReference Include="..\_InstanceEleve\_AffichageListes.csproj">
       <Project>{9d3b58de-9f5c-4847-994c-8b155cd1993d}</Project>
-      <Name>_InstanceEleve</Name>
+      <Name>_AffichageListes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\_InstanceExterieur\_InstanceExterieur.csproj">
+    <ProjectReference Include="..\_InstanceExterieur\_InstancePersonne.csproj">
       <Project>{b48dd257-baf7-42db-b104-910abe60056d}</Project>
-      <Name>_InstanceExterieur</Name>
+      <Name>_InstancePersonne</Name>
     </ProjectReference>
     <ProjectReference Include="..\_InstanceLivrable\_InstanceLivrable.csproj">
       <Project>{7df3992f-891c-4b0f-a9cb-048753acb924}</Project>

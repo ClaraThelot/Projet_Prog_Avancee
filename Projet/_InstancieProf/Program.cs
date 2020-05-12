@@ -13,7 +13,7 @@ namespace _InstancieProf
         static void Main(string[] args)
         {
         }
-        public static List<Professeur> instancieProfesseur()
+       /* public static List<Professeur> instancieProfesseur()
         {
             char separateur = '*';
             List<Matiere> Matieres = new List<Matiere>();
@@ -47,6 +47,6 @@ namespace _InstancieProf
                 Prof.Add(profe);
             }
             return Prof;
-        }
+        }*/
     }
 }

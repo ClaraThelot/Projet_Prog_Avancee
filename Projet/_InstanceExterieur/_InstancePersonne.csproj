@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\_InstanceMatiere\_InstanceMatiere.csproj">
+      <Project>{d30ccd61-734b-4736-8cb0-106997467f66}</Project>
+      <Name>_InstanceMatiere</Name>
+    </ProjectReference>
     <ProjectReference Include="..\_projet\_projet.csproj">
       <Project>{0a02fe91-42b8-40e2-85f9-9b960c2eabcc}</Project>
       <Name>_projet</Name>

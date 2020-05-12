@@ -5,16 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using _projet;
 
-namespace _InstanceEleve
+namespace _AffichageListes // Pour factoriser les codes d'affichage des différentes listes
 {
     public class Program
     {
         static void Main(string[] args)
         {
         }
-        
-        
-        public static List<Eleve> instancieEleve()
+
+        public void AfficheEleves()
+        {
+            Console.WriteLine("Voilà la liste des élèves répertoriés !");
+            List<Eleve> TousEleves2 = new List<Eleve>();
+            TousEleves2 = _InstancePersonne.Program.instancieEleve();
+            foreach (Eleve element in TousEleves2)
+            {
+                Console.Write(element._nom);
+                Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + TousEleves2.IndexOf(element));
+            }
+        }
+        /*public static List<Eleve> instancieEleve()
         {
             char separateur = '*';
             List<Eleve> Eleves = new List<Eleve>();
@@ -37,6 +47,6 @@ namespace _InstanceEleve
                 Eleves.Add(eleve);
             }
             return Eleves;
-        }
+        }*/
     }
 }

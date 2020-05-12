@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_projet", "_projet\_projet.csproj", "{0A02FE91-42B8-40E2-85F9-9B960C2EABCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstanceEleve", "_InstanceEleve\_InstanceEleve.csproj", "{9D3B58DE-9F5C-4847-994C-8B155CD1993D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_AffichageListes", "_InstanceEleve\_AffichageListes.csproj", "{9D3B58DE-9F5C-4847-994C-8B155CD1993D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstanceMatiere", "_InstanceMatiere\_InstanceMatiere.csproj", "{D30CCD61-734B-4736-8CB0-106997467F66}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstanceLivrable", "_Insta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstancieProf", "_InstancieProf\_InstancieProf.csproj", "{58D60E80-88B0-4C1E-906D-1E382C13ABF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstanceExterieur", "_InstanceExterieur\_InstanceExterieur.csproj", "{B48DD257-BAF7-42DB-B104-910ABE60056D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstancePersonne", "_InstanceExterieur\_InstancePersonne.csproj", "{B48DD257-BAF7-42DB-B104-910ABE60056D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_InstanceProjet", "_InstanceProjet\_InstanceProjet.csproj", "{7B0E5A82-11A8-42AB-8D0F-B07074E7D90D}"
 EndProject

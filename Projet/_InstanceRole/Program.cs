@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _projet;
 using _InstanceProjet;
-using _InstanceExterieur;
+using _InstancePersonne;
 using _InstancieProf;
 
 namespace _InstanceRole
@@ -28,9 +28,9 @@ namespace _InstanceRole
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet(); // On instancie la liste des projets. 
             List<Exterieur> Exte = new List<Exterieur>();
-            Exte = _InstanceExterieur.Program.instancieIntervenantE(); // Pareil avec les intervenants exté
+            Exte = _InstancePersonne.Program.instancieIntervenantE(); // Pareil avec les intervenants exté
             List<Professeur> Prof = new List<Professeur>();
-            Prof = _InstancieProf.Program.instancieProfesseur();
+            Prof = _InstancePersonne.Program.instancieProfesseur();
 
             System.IO.StreamReader file = new System.IO.StreamReader("Rôles.txt");
             while ((line = file.ReadLine()) != null)
