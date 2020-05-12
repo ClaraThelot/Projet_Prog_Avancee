@@ -22,7 +22,7 @@ namespace _InstancePersonne
             string nomprof;
             string prénomprof;
             string mat;
-            Matiere mate;
+            List<Matiere> mate=new List<Matiere>();
             System.IO.StreamReader fichier2 = new System.IO.StreamReader("Professeurs.txt");
             while ((ligne2 = fichier2.ReadLine()) != null)
             {
@@ -41,7 +41,7 @@ namespace _InstancePersonne
 
                     elementi += 1;
                 }
-                mate = Matieres[choix];
+                mate.Add(Matieres[choix]);
                 Professeur profe = new Professeur(nomprof, prénomprof, mate);
                 Prof.Add(profe);
             }

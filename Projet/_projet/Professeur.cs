@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    public class Professeur :Personne
+    public class Professeur : Personne
     {
-        public Matiere _matieres { get; set; }                                                       // J'ai temporairement enlevé le fait que c'est un tableau
+        public List<Matiere> _matieres { get; set; }                                                       // J'ai temporairement enlevé le fait que c'est un tableau
 
-        public Professeur(string Nom, string Prenom, Matiere Matieres) : base(Nom, Prenom) {
+        public Professeur(string Nom, string Prenom, List<Matiere> Matieres) : base(Nom, Prenom) {
             _matieres = Matieres;
         }
         
         public Professeur(string Nom, string Prenom, List<Projet> Proj) : base(Nom, Prenom, Proj) { }
 
-        public Professeur(string Nom, string Prenom, List<Projet> Proj, Matiere Matiere) : base(Nom, Prenom, Proj)
+        public Professeur(string Nom, string Prenom, List<Projet> Proj, List<Matiere> Matiere) : base(Nom, Prenom, Proj)
         {
             _matieres = Matiere;
         }
@@ -31,6 +31,11 @@ namespace _projet
             res = res + "Nom : " + _nom + "\n";
             res = res + "Prénom : " + _prenom + "\n";
             res = res + "Liste des matières enseignées : ";
+            int comptemat = 0;
+            foreach(Matiere element in _matieres)
+            {
+                res = res + "Matière n°" + (comptemat + 1) + " : " + element._nom + "\n";
+            }
             res = res + _matieres;
             res = res + "\nListe des projets en cours : \n";
             int i = 0;

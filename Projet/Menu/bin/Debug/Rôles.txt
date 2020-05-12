@@ -1,1 +1,3 @@
 Client*2b*Lajoie*Info
+Client*3*Favier*RAO
+Professeur*4*Solomas*GCCo

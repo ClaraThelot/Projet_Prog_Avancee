@@ -11,7 +11,8 @@ namespace _projet
         public string _nom;
         public string _code;
         public string _UE;
-
+  
+        public Matiere() { }
         public Matiere(string nom, string code, string UE)
         {
             _nom = nom;

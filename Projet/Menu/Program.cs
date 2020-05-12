@@ -113,11 +113,16 @@ namespace Menu
                                 Console.WriteLine("Matière enseignée : " + element._nom);
                                 foreach (Professeur prof in Prof)
                                 {
-                                    if (prof._matieres._nom == element._nom)
+                                    foreach (Matiere mat in prof._matieres)
                                     {
-                                        Console.Write(prof._nom);
-                                        Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Prof.IndexOf(prof));
-                                    }//Pour l'instant ne marche que pcq le _matieres des Profs n'est pas une liste mais un singleton
+                                        Matiere temp = new Matiere();
+                                        temp = mat;
+                                        if (temp == element)
+                                        {
+                                            Console.Write(prof._nom);
+                                            Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Prof.IndexOf(prof));
+                                        }
+                                    }
                                 }
                             }
                             numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
