@@ -61,3 +61,5 @@ C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Rattachement.p
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Rattachement.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Rattachement.pdb
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Rattachement.exe.config
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Ajout.exe
+C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Menu\bin\Debug\Ajout.pdb

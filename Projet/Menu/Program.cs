@@ -12,6 +12,7 @@ using _InstanceRole;
 using _projet;
 using RechercheLibre;
 using Rattachement;
+using Ajout;
 
 namespace Menu
 {
@@ -25,50 +26,9 @@ namespace Menu
             int choixUt = int.Parse(Console.ReadLine());
             if (choixUt==1)
             MenuRecherche();
-            if (choixUt == 2) MenuAjout();
+            if (choixUt == 2) Ajout.Program.MenuAjout();
         }
-        static bool MenuAjout()
-        {
-            Console.WriteLine("Bienvenue sur le menu des ajouts !");
-            Console.WriteLine("Vous allez pouvoir créer un projet. D'abord, saisissez-en le nom.");
-            string nomProj = Console.ReadLine();
-            Projet proj = new Projet(nomProj);
-            Console.WriteLine("Saisissez la durée du projet (Tapez un nombre, en mois)");
-            proj._duree = int.Parse(Console.ReadLine());
-            Console.WriteLine("Si vous laissez de la liberté à vos élèves et que votre sujet est libre, tapez 'oui', sinon, tapez 'non'");
-            string libre = Console.ReadLine();
-            if (libre == "oui") { proj._sujetLibre = true; }
-            else  { proj._sujetLibre = false; }
-            Console.WriteLine("Mais dîtes moi, vous ne parlez pas d'un sujet déjà achevé ? (tapez 'si' ou 'non'");
-            string fini = Console.ReadLine();
-            if(fini=="si")
-            {
-                proj._sujetAcheve = true;
-                Console.WriteLine("Quelle note avez-vous attribué à ces élèves acharnés ?");
-                proj._note = int.Parse(Console.ReadLine());
-            }
-            else { proj._sujetAcheve = false; }
-            Console.WriteLine("Combien de professeurs gèrent ce projet ?");
-            int NbProf = int.Parse(Console.ReadLine());
-            List<Professeur> Prof = new List<Professeur>();
-            for(int i=1; i<NbProf+1;i++)
-            {
-                Console.WriteLine("Tapez le code associé au premier professeur du projet.");
-                //Affichage des profs ->  à factoriser avec celle d'en dessous
-                Console.WriteLine("Voilà la liste des professeurs répertoriés !");
-                List<Professeur> TousProfs = new List<Professeur>();
-                foreach (Professeur element in TousProfs)
-                {
-                    Console.Write(element._nom);
-                    Console.WriteLine("     Si vous sélectionnez ce professeur, tapez " + TousProfs.IndexOf(element));
-                }
-                int numerochoisi = int.Parse(Console.ReadLine()); // fin de la fonction à factoriser
-                
-                foreach (Professeur element in TousProfs)
-                { if (numerochoisi == TousProfs.IndexOf(element)) Prof.Add(element); }
-            }
-            return true;
-        }
+       
         static bool MenuRecherche()
         {
             Console.WriteLine("Bienvenue sur votre application de recherche de projets de l'ENSC ! \nComment souhaitez-vous effectuer votre recherche ?\n");

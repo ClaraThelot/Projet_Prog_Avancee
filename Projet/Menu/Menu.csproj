@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ajout\Ajout.csproj">
+      <Project>{9e7bc385-7cce-4833-bdea-64625cd1fe45}</Project>
+      <Name>Ajout</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Rattachement\Rattachement.csproj">
       <Project>{deb269bd-7d56-478c-88d7-d4e07b841fe1}</Project>
       <Name>Rattachement</Name>

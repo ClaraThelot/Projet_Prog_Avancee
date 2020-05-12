@@ -27,6 +27,16 @@ namespace _projet
         public Projet(string nom)
         {
             _nomProjet = nom;
+            _duree = 0;
+            _sujetLibre = false;
+            _note = 0;
+            _sujetAcheve = false;
+            _livrables = new List<Livrable>();
+            _eleves = new List<Eleve>();
+            _intervenants = new List<Exterieur>();
+            _professeurs = new List<Professeur>();
+            _matieres = new List<Matiere>();
+            _chefprojet = new Eleve();
         }
         public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants,List<Professeur> profs, List<Matiere> matieres, Eleve chefprojet)
         {
