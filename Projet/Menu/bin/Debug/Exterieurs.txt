@@ -1,5 +1,5 @@
-Bertrand*Lajoie* Développeur * Thalès
-Robert*Delanoix* Mecano * Thalès
+Bertrand*Lajoie*Développeur*Thalès
+Robert*Delanoix*Mecano* Thalès
 Benoît*Gillon*Cadre*Thalès
 Jean-Maurice*Basvert*Médecin*Libéral
 Patricia*Unno*Chercheuse*Laboratoire

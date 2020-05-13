@@ -143,7 +143,7 @@ namespace _InstanceProjet
                             {
                                 choix2 = element2;
                             }
-                            element2 += 1;
+                            element2++;
                         }
                         prof.Add(Professeurs[choix2]);
                     }
