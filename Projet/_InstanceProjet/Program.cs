@@ -48,16 +48,18 @@ namespace _InstanceProjet
                 List<Professeur> prof = new List<Professeur>();
                 Eleve chef = new Eleve();
                 String[] information = ligneP.Split(separateur);
-                nom = information[0];
-                duree = int.Parse(information[1]);
-                sujetlibre = bool.Parse(information[2]);
-                note = double.Parse(information[3]);
-                acheve = bool.Parse(information[4]);
+                string code;
+                code = information[0];
+                nom = information[1];
+                duree = int.Parse(information[2]);
+                sujetlibre = bool.Parse(information[3]);
+                note = double.Parse(information[4]);
+                acheve = bool.Parse(information[5]);
                 int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
                 int choix = 0;
                 foreach (Matiere element in Matieres)
                 {
-                    if (element._nom == information[5])
+                    if (element._nom == information[6])
                     {
                         choix = elementi;
                     }
@@ -65,7 +67,15 @@ namespace _InstanceProjet
                 }
                 matconcernee.Add(Matieres[choix]);
 
-                for (int i = 6; i < information.Length; i++)
+                foreach(Livrable liv in Livrables)
+                {
+                    if(liv._refprojet== code)
+                    {
+                        llivrable.Add(liv);
+                    }
+                }
+
+                for (int i = 7; i < information.Length; i++)
                 {
                     if (information[i][0] == 'E')
                     {
@@ -99,22 +109,7 @@ namespace _InstanceProjet
                         }
                         pparticipant.Add(Exterieurs[choix2]);
                     }
-                    if (information[i][0] == 'L')
-                    {
-                        int start = 1;
-                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
-                        int choix2 = 0;
-                        string echeanceprojet = information[i].Substring(start);
-                        foreach (Livrable element in Livrables)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
-                        {
-                            if (element._echeance == echeanceprojet)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
-                            {
-                                choix2 = element2;
-                            }
-                            element2 += 1;
-                        }
-                        llivrable.Add(Livrables[choix2]);
-                    }
+                  
                     if (information[i][0] == 'C')
                     {
                         int start = 1;
@@ -148,7 +143,7 @@ namespace _InstanceProjet
                         prof.Add(Professeurs[choix2]);
                     }
                 }
-                Projet ajout = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
+                Projet ajout = new Projet(code,nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
                 foreach(Eleve element in eparticipant)
                 {
                     foreach (Eleve element2 in Eleves)
@@ -159,9 +154,8 @@ namespace _InstanceProjet
                         }
                 }
                 }
-                Projet nouveau = new Projet(nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
+                Projet nouveau = new Projet(code,nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
                 Projets.Add(nouveau);
-
             }
             return Projets;
         }

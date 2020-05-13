@@ -21,13 +21,14 @@ namespace _projet
         {
             _matieres = Matiere;
         }
-        /*public void ajoutProjet(Projet P1)
+
+        public void ajoutMatiere(Matiere M1)
         {
-            _projet.Add(P1);
-        }*/
+            _matieres.Add(M1);
+        }
         public override string ToString()
         {
-            string res = " ";
+            string res = "";
             res = res + "Nom : " + _nom + "\n";
             res = res + "Prénom : " + _prenom + "\n";
             res = res + "Liste des matières enseignées : ";
@@ -35,8 +36,8 @@ namespace _projet
             foreach(Matiere element in _matieres)
             {
                 res = res + "Matière n°" + (comptemat + 1) + " : " + element._nom + "\n";
+                comptemat++;
             }
-            res = res + _matieres;
             res = res + "\nListe des projets en cours : \n";
             int i = 0;
             foreach (Projet element in _projet)

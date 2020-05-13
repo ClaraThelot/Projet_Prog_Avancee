@@ -8,6 +8,7 @@ using _InstanceProjet;
 using _projet;
 using _InstancePersonne;
 using _InstancieProf;
+using _InstanceMatiere;
 
 namespace Rattachement
 {
@@ -62,16 +63,22 @@ namespace Rattachement
             professeur = _InstancePersonne.Program.instancieProfesseur();
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet();
+            List<Matiere> Matieres = new List<Matiere>();
+            Matieres = _InstanceMatiere.Program.instancieMatiere();
             foreach (Professeur element in professeur)
             {
                 foreach (Projet p in Projets)
                 {
                     foreach (Professeur e in p._professeurs)
                     {
-                        if (e._nom == element._nom)
-                        {
-                            element.ajoutProjet(p);
-                        }
+                        if (e._nom == element._nom)element.ajoutProjet(p);
+                    }
+                }
+                foreach(Matiere m in Matieres)
+                {
+                    foreach(Matiere mprof in element._matieres)
+                    {
+                        if (mprof == m) element.ajoutMatiere(m);
                     }
                 }
             }

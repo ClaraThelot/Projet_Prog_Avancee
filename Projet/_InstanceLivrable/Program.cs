@@ -19,13 +19,15 @@ namespace _InstanceLivrable
             string ligneL;
             string type;
             string echeance;
+            string projet = "";
             System.IO.StreamReader file3 = new System.IO.StreamReader("Livrables.txt");
             while ((ligneL = file3.ReadLine()) != null)
             {
                 String[] information = ligneL.Split(separateur);
                 type = information[0];
                 echeance = information[1];
-                Livrable liv = new Livrable(type, echeance);
+                projet = information[2];
+                Livrable liv = new Livrable(type, echeance, projet);
                 Livrables.Add(liv);
             }
             return Livrables;

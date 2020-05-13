@@ -30,7 +30,7 @@ namespace _InstancePersonne
                 int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
                 int choix = 0;                                                          // Cet entier permettra de retenir le numéro de l'élément correspondant à la matière recherchée
                 nomprof = information[0];
-               prénomprof = information[1];
+                prénomprof = information[1];
                 mat = information[2];
                 foreach (Matiere element in Matieres)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
                 {
@@ -38,7 +38,6 @@ namespace _InstancePersonne
                     {
                         choix = elementi;
                     }
-
                     elementi += 1;
                 }
                 mate.Add(Matieres[choix]);

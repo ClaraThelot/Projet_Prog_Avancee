@@ -1,7 +1,7 @@
-Info*3*false*18*true*Probabilités*EPradal*EThelot*PBertrand*PRobert*CPradal*L2020/05/04*MSolomas
-Maths*1*true*12*false*Probabilités*EThelot*PBertrand*CThelot*L2020/05/04*MMougin
-GCCO*2*true*0*false*Anglais*EThelot*PDelanoix*CThelot*L2020/05/04*MSolomas
-RAO*4*false*0*true*GCCo*EPradal*EPetit*EVincent*L2020/06/04*MAriès
-PFE*6*true*18*true* *EHache*PGillon*L2020/09/11*MMougin
-PFE*6*false*0*false*ESimmonet*PUnno*L2020/06/05*MMougin
-Info Individuel*3*true*18*true*PBasvert*L2020/06/05*MFavier
+0*Info*3*false*18*true*Probabilités*EPradal*EThelot*PBertrand*PRobert*CPradal*MSolomas
+1*Maths*1*true*12*false*Probabilités*EThelot*PBertrand*CThelot*MMougin
+2*GCCO*2*true*0*false*Anglais*EThelot*PDelanoix*CThelot*MSolomas
+3*RAO*4*false*0*true*GCCo*EPradal*EPetit*EVincent*MAriès
+4*PFE*6*true*18*true* *EHache*PGillon*MMougin
+5*PFE*6*false*0*false*ESimmonet*PUnno*MMougin
+6*Info Individuel*3*true*18*true*PBasvert*MFavier

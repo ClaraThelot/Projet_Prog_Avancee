@@ -19,7 +19,7 @@ namespace _projet
         public Eleve _chefprojet { get; set; }
         public bool _sujetAcheve { get; set; }
         public double _note { get; set; }
-
+        public string _code { get;}
 
 
 
@@ -38,8 +38,9 @@ namespace _projet
             _matieres = new List<Matiere>();
             _chefprojet = new Eleve();
         }
-        public Projet(string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants,List<Professeur> profs, List<Matiere> matieres, Eleve chefprojet)
+        public Projet(string code,string nom, double duree, bool sujetlibre, double note, bool sujetAcheve, List<Livrable> livrables, List<Eleve> eleves, List<Exterieur> intervenants,List<Professeur> profs, List<Matiere> matieres, Eleve chefprojet)
         {
+            _code = code;
             _livrables = livrables;
             _nomProjet = nom;
             _duree = duree;
@@ -133,7 +134,7 @@ namespace _projet
         {
             string res = "";
             res = res + "Nom du projet : " + _nomProjet + "\n";
-            res = res + "Durée du projet :" + _duree + "\n";
+            res = res + "Durée du projet :" + _duree + "mois\n";
             if (_sujetLibre == true) res = res + "Sujet libre \n";
             else { res = res + "Sujet imposé \n"; }
             res = res + "Elèves participants : \n";
@@ -146,17 +147,20 @@ namespace _projet
             foreach (Matiere element in _matieres)
             { res = res + element.ToString() + "\n"; }
             res = res + "Chef de Projet :" + _chefprojet + "\n";
-            if (_sujetAcheve == true) res = res + "Statut du projet : achevé \n";
+            if (_sujetAcheve == true)
+            {
+                res = res + "Statut du projet : achevé \n";
+                res = res + "Note : " + _note + "\n";
+            }
             else { res = res + "Statut du sujet : en cours \n "; }
             res = res + "Sujet Achevé : " + _sujetAcheve + "\n";
-            if (_sujetAcheve == true) res = res + "Note : " + _note + "\n";
             return res;
         }
 
         public void Affichage(object obj)
         {
             Console.WriteLine("Nom du projet: " + _nomProjet + "\n");
-            Console.WriteLine("Durée du projet :" + _duree + "\r\n");
+            Console.WriteLine("Durée du projet :" + _duree + " mois \n");
             if (_sujetLibre == true) Console.WriteLine("Sujet imposé" +"\r\n");
             Console.WriteLine("Eleves participant : ");
             foreach (Eleve element in _eleves)
@@ -180,14 +184,15 @@ namespace _projet
             }
             Console.WriteLine("Matières concernées :");
             foreach(Matiere element in _matieres)
-            { Console.WriteLine(element._nom); } //Dans un premier tps
+            { Console.WriteLine(element._nom); } 
             Console.WriteLine("\r\n");
             Console.WriteLine("Chef de projet : "+_chefprojet._nom+ "     Si vous voulez en savoir plus sur cet élève, tapez 0" + _eleves.IndexOf(_chefprojet));
+            Console.WriteLine("Les livrables sont les suivants : "); 
             foreach (Livrable element in _livrables)
             {
-                Console.WriteLine(element.ToString());
+                Console.WriteLine(element._type+" ("+element._echeance+")");
             }
-            Console.WriteLine("\r\n");
+            Console.WriteLine("\n");
             if (_sujetAcheve == true)
             {
                 Console.WriteLine("Statut du projet : achevé");

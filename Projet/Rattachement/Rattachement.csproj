@@ -58,6 +58,10 @@
       <Project>{b48dd257-baf7-42db-b104-910abe60056d}</Project>
       <Name>_InstancePersonne</Name>
     </ProjectReference>
+    <ProjectReference Include="..\_InstanceMatiere\_InstanceMatiere.csproj">
+      <Project>{d30ccd61-734b-4736-8cb0-106997467f66}</Project>
+      <Name>_InstanceMatiere</Name>
+    </ProjectReference>
     <ProjectReference Include="..\_InstanceProjet\_InstanceProjet.csproj">
       <Project>{7b0e5a82-11a8-42ab-8d0f-b07074e7d90d}</Project>
       <Name>_InstanceProjet</Name>
