@@ -6,3 +6,10 @@ Rapport*2000/08/08*8*
 Rappuerto*2020/10/28*9*
 Rappuertito*2000/05/04*10*
 Soutenancia*2020/12/12*11*
+CdC*2020/05/06*12*
+Livrable*2020/05/04*13*
+Soutenance*2020/05/06*12*
+Soutenance*2020/01/01*13*
+Soutenance*2020/01/01*14*
+Argent*2020/05/13*15*
+SS*2020/09/09*16*

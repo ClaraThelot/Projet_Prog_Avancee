@@ -10,3 +10,8 @@
 9*EssaiEncore*2*false*0*false*AProgrammation avancée*ERabii*PSorita*CRabii*MLespinet
 10*Projet*2*true*0*false*ACommunication Web*EHache*PSorita*CHache*MAries
 11*2NE1*1*true*0*false*AAnglais*ACommunication Web*EThelot*PLajoie*CThelot*MSaracco
+12*Testf*2*true*0*false*AAnglais*AProbabilités*EThelot*EPradal*PLajoie*CThelot*MFavier
+13*TestM*2*true*0*false*ABrosserdeslicornes*EThelot*EPradal*PLajoie*CThelot*MSolomas
+14*Tesma*1*true*0*false*AChevaucherLicornes*AAnglais*AAnglais*EPetit*PUnno*CPetit*MFavier
+15*TestPics*40*false*0*false*ABases de la cognition*EPicsou*EThelot*EHache*PSorita*CPicsou*MArsac
+16*tes*2*false*0*false*AGCCo*AProgrammation avancée*ED'Arc*EThelot*PSorita*CD'Arc*MFaïta-Ainseba
