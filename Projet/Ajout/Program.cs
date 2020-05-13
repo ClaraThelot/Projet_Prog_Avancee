@@ -8,6 +8,7 @@ using _InstancieProf;
 using _AffichageListes;
 using _InstancePersonne;
 using _projet;
+using System.IO;
 
 namespace Ajout
 {
@@ -29,47 +30,8 @@ namespace Ajout
         
         public static bool MenuAjout()
         {
-            /* Console.WriteLine("Bienvenue sur le menu des ajouts !");
-             Console.WriteLine("Vous allez pouvoir créer un projet. D'abord, saisissez-en le nom.");
-             string nomProj = Console.ReadLine();
-             Projet proj = new Projet(nomProj);
-             Console.WriteLine("Saisissez la durée du projet (Tapez un nombre, en mois)");
-             proj._duree = int.Parse(Console.ReadLine());
-             Console.WriteLine("Si vous laissez de la liberté à vos élèves et que votre sujet est libre, tapez 'oui', sinon, tapez 'non'");
-             string libre = Console.ReadLine();
-             if (libre == "oui") { proj._sujetLibre = true; }
-             else { proj._sujetLibre = false; }
-             Console.WriteLine("Mais dîtes moi, vous ne parlez pas d'un sujet déjà achevé ? (tapez 'si' ou 'non'");
-             string fini = Console.ReadLine();
-             if (fini == "si")
-             {
-                 proj._sujetAcheve = true;
-                 Console.WriteLine("Quelle note avez-vous attribué à ces élèves acharnés ?");
-                 proj._note = int.Parse(Console.ReadLine());
-             }
-             else { proj._sujetAcheve = false; }
-             Console.WriteLine("Combien de professeurs gèrent ce projet ?");
-             int NbProf = int.Parse(Console.ReadLine());
-             List<Professeur> Prof = new List<Professeur>();
-             for (int i = 1; i < NbProf + 1; i++)
-             {
-                 Console.WriteLine("Tapez le code associé au premier professeur du projet.");
-                 //Affichage des profs ->  à factoriser avec celle d'en dessous
-                 Console.WriteLine("Voilà la liste des professeurs répertoriés !");
-                 List<Professeur> TousProfs = new List<Professeur>();
-                 TousProfs = _InstancieProf.Program.instancieProfesseur();
-                 foreach (Professeur element in TousProfs)
-                 {
-                     Console.Write(element._nom);
-                     Console.WriteLine("     Si vous sélectionnez ce professeur, tapez " + TousProfs.IndexOf(element));
-                 }
-                 int numerochoisi = int.Parse(Console.ReadLine()); // fin de la fonction à factoriser
 
-                 foreach (Professeur element in TousProfs)
-                 { if (numerochoisi == TousProfs.IndexOf(element)) Prof.Add(element); }
-             }
-             return true;*/
-
+            int totalLignes = File.ReadLines("Projets.txt").Count();                                     //Permettra d'identifier le projet
             Console.WriteLine("Bienvenue sur le menu des ajouts !");
             Console.WriteLine("Vous allez pouvoir créer un projet. D'abord, saisissez-en le nom.");
             string nom = Console.ReadLine();
@@ -92,14 +54,16 @@ namespace Ajout
             {
                 ligne = ligne + "0*false*";
             }
-
             //Sélection des matières :
-
+            List<Matiere> TousMatieres = new List<Matiere>();
+            TousMatieres = _InstanceMatiere.Program.instancieMatiere();
+            Console.WriteLine("Combien de matières concernent ce projet ?");
+            int NbM = int.Parse(Console.ReadLine());
+            for (int i = 1; i < NbM + 1; i++)
+            {
                 Console.WriteLine("Tapez le code associé à la matière du projet.");
                 //Affichage des élèves ->  à factoriser avec celle d'en dessous
                 Console.WriteLine("Voilà la liste matières !");
-                List<Matiere> TousMatieres = new List<Matiere>();
-                TousMatieres = _InstanceMatiere.Program.instancieMatiere();
                 foreach (Matiere element in TousMatieres)
                 {
                     Console.Write(element._nom);
@@ -111,11 +75,12 @@ namespace Ajout
                 {
                     if (numerochoisi == TousMatieres.IndexOf(element))
                     {
-                        ligne = ligne + TousMatieres[numerochoisi]._nom+ "*";
+                        ligne = ligne +"A"+ TousMatieres[numerochoisi]._nom + "*";
                     }
                 }
+            }
 
-            
+            List<Eleve> participant = new List<Eleve>();
 
             //Sélection des élèves
             Console.WriteLine("Combien d'élèves travaillent sur ce projet ?");
@@ -139,6 +104,7 @@ namespace Ajout
                 {
                     if (numerochoisi3 == TousEleves2.IndexOf(element))
                     {
+                        participant.Add(TousEleves2[numerochoisi3]);
                         ligne = ligne + "E" + TousEleves2[numerochoisi3]._nom + "*";
                     }
                 }
@@ -175,12 +141,10 @@ namespace Ajout
             Console.WriteLine("Tapez le code associé au chef du projet.");
             //Affichage des élèves ->  à factoriser avec celle d'en dessous
             Console.WriteLine("Voilà la liste des élèves !");
-            List<Eleve> TousEleves = new List<Eleve>();
-            TousEleves = _InstancePersonne.Program.instancieEleve();
-            foreach (Eleve element in TousEleves)
+            foreach (Eleve element in participant)
             {
                 Console.Write(element._nom);
-                Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + TousEleves.IndexOf(element));
+                Console.WriteLine("     Si vous sélectionnez cet elève, tapez " + participant.IndexOf(element));
             }
             int numerochoisi4 = int.Parse(Console.ReadLine()); // fin de la fonction à factoriser
 
@@ -188,7 +152,7 @@ namespace Ajout
             {
                 if (numerochoisi4 == TousMatieres.IndexOf(element))
                 {
-                    ligne = ligne +"C"+ TousEleves[numerochoisi4]._nom + "*";
+                    ligne = ligne +"C"+ participant[numerochoisi4]._nom + "*";
                 }
             }
 
@@ -197,24 +161,22 @@ namespace Ajout
             int NbL = int.Parse(Console.ReadLine());
             for (int i = 1; i < NbL + 1; i++)
             {
-                Console.WriteLine("Tapez le code associé au premier livrable du projet.");
-                //Affichage des profs ->  à factoriser avec celle d'en dessous
-                Console.WriteLine("Voilà la liste des livrables répertoriés !");
-                List<Livrable> TousLiv = new List<Livrable>();
-                TousLiv = _InstanceLivrable.Program.instancieLivrable();
-                foreach (Livrable element in TousLiv)
+                Console.WriteLine("Quel est le nom de votre livrable ?");
+                string _nom = Console.ReadLine();
+                Console.WriteLine("Quelle est l'échéance de ce livrable ? (de la forme AAAA/MM/JJ)");
+                string _date = Console.ReadLine();
+                string nv = _nom + "*" + _date + "*" + totalLignes + "*";
+                try
                 {
-                    Console.Write(element._echeance);
-                    Console.WriteLine("     Si vous sélectionnez ce professeur, tapez " + TousLiv.IndexOf(element));
-                }
-                int numerochoisi5 = int.Parse(Console.ReadLine()); // fin de la fonction à factoriser
-
-                foreach (Livrable element in TousLiv)
-                {
-                    if (numerochoisi5 == TousLiv.IndexOf(element))
+                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter("Rôles.txt", append: true))
                     {
-                        ligne = ligne + "L" + TousLiv[numerochoisi5]._echeance + "*";
+
+                        writer.Write("\r\n" +nv );
                     }
+                }
+                catch (Exception exp)
+                {
+                    Console.Write("Erreur");
                 }
 
             }
@@ -249,19 +211,29 @@ namespace Ajout
 
                 //Ecriture dans le fichier Projets.txt
                 string fileName = "Projets.txt";
-                try
+            // Création du code :
+            string ecrire = totalLignes + "*" + ligne;
+            try
                 {
                 using (System.IO.StreamWriter writer = new System.IO.StreamWriter(fileName, append: true))
                 {
                   
-                    writer.Write("\r\n"+ligne);
+                    writer.Write("\r\n"+ecrire);
                 }
                 }
                 catch (Exception exp)
                 {
                     Console.Write("Erreur");
-                }
-                return true;
+            }
+            //Affichage de la création 
+            Console.Clear();
+            Console.WriteLine("Vous avez créer le projet suivant !");
+            List<Projet> bdd = new List<Projet>();
+            bdd = _InstanceProjet.Program.instancieProjet();
+            Projet ajout = bdd.Last();
+            ajout.Affichage(ajout);
+            return true;
+
             }
         }
     

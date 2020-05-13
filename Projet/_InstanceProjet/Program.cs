@@ -55,17 +55,6 @@ namespace _InstanceProjet
                 sujetlibre = bool.Parse(information[3]);
                 note = double.Parse(information[4]);
                 acheve = bool.Parse(information[5]);
-                int elementi = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
-                int choix = 0;
-                foreach (Matiere element in Matieres)
-                {
-                    if (element._nom == information[6])
-                    {
-                        choix = elementi;
-                    }
-                    elementi++;
-                }
-                matconcernee.Add(Matieres[choix]);
 
                 foreach(Livrable liv in Livrables)
                 {
@@ -74,9 +63,25 @@ namespace _InstanceProjet
                         llivrable.Add(liv);
                     }
                 }
-
-                for (int i = 7; i < information.Length; i++)
+                int i = 6;
+                while(i<information.Length)
                 {
+                    if(information[i][0]=='A')
+                    {
+                        int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
+                        int choix2 = 0;
+                        int start = 1;
+                        string nomparticipant = information[i].Substring(start);
+                        foreach (Matiere element in Matieres)                                   // Cette boucle permet de repérer l'objet de type matière correspondant au nom de matière donné dans le fichier du prof
+                        {
+                            if (element._nom == nomparticipant)                                            // Si le nom dans le fichier correspond au nom de cette matière, on retient le numéro
+                            {
+                                choix2 = element2;
+                            }
+                            element2 += 1;
+                        }
+                        matconcernee.Add(Matieres[choix2]);
+                    }
                     if (information[i][0] == 'E')
                     {
                         int element2 = 0;                                                       //Cet entier contiendra la place de l'élément en cours de lecture dans la liste
@@ -142,7 +147,20 @@ namespace _InstanceProjet
                         }
                         prof.Add(Professeurs[choix2]);
                     }
+                    i++;
                 }
+                int repere = 0;
+                int parcours = 0; 
+                foreach(Livrable element in Livrables)
+                {
+                    if(element._refprojet==code)
+                    {
+                       repere  = parcours; 
+                    }
+                    parcours++;
+                }
+                llivrable.Add(Livrables[repere]);
+
                 Projet ajout = new Projet(code,nom, duree, sujetlibre, note, acheve, llivrable, eparticipant, pparticipant, prof, matconcernee, chef);
                 foreach(Eleve element in eparticipant)
                 {

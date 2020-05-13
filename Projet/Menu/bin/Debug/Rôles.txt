@@ -1,3 +1,8 @@
 Client*2b*Lajoie*Info
 Client*3*Favier*RAO
 Professeur*4*Solomas*GCCo
+
+Rapport*2000/08/08*8*
+Rappuerto*2020/10/28*9*
+Rappuertito*2000/05/04*10*
+Soutenancia*2020/12/12*11*

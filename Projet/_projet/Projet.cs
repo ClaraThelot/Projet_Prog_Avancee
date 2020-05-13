@@ -19,7 +19,7 @@ namespace _projet
         public Eleve _chefprojet { get; set; }
         public bool _sujetAcheve { get; set; }
         public double _note { get; set; }
-        public string _code { get;}
+        public string _code { get; set; }
 
 
 
@@ -27,6 +27,7 @@ namespace _projet
         public Projet(string nom)
         {
             _nomProjet = nom;
+            _code = "";
             _duree = 0;
             _sujetLibre = false;
             _note = 0;
