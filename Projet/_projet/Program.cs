@@ -10,7 +10,10 @@ namespace _projet
    public class Program
     {
 
-
+        public void AfficheParAn(string annee, List<Eleve> ListeE)
+        {
+           
+        }
         static void Main(string[] args)
         {
 

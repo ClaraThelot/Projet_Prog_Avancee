@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _projet
 {
-    public class Personne : IAffichable
+    public class Personne //:IAffichable
     {
 
         public string _nom { get; }
@@ -59,11 +59,18 @@ namespace _projet
             _projet.Add(P1);
         }
 
-        public void AffichageDepuisListe(object obj, List<object> List)
+        /*public void AffichageDepuisListe(object obj, List<object> List)
         {
             int numero = int.Parse(Console.ReadLine());
            if (numero == 1) Console.WriteLine(obj.ToString());
         }
+
+        public void EnSavoirPlus(List<object> List)
+        {
+            int numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
+            foreach (object element in List)
+            { if (numerochoisi == List.IndexOf(element)) Console.WriteLine(element.ToString()); }
+        }*/
     }
 
 }
