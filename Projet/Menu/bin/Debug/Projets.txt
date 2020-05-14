@@ -15,3 +15,5 @@
 14*Tesma*1*true*0*false*AChevaucherLicornes*AAnglais*AAnglais*EPetit*PUnno*CPetit*MFavier
 15*TestPics*40*false*0*false*ABases de la cognition*EPicsou*EThelot*EHache*PSorita*CPicsou*MArsac
 16*tes*2*false*0*false*AGCCo*AProgrammation avancée*ED'Arc*EThelot*PSorita*CD'Arc*MFaïta-Ainseba
+17*CLARA*2*true*0*false*AFH, UX et utilisabilité*AFlirter*EThelot*PBaptiste*CThelot*MSolomas
+18*JUDITH*1*true*18*true*AChevaucherLicornes*EPradal*PSorita*CPradal*MSolomas*

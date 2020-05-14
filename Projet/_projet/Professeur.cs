@@ -15,7 +15,9 @@ namespace _projet
             _matieres = Matieres;
         }
         
-        public Professeur(string Nom, string Prenom, List<Projet> Proj) : base(Nom, Prenom, Proj) { }
+        public Professeur(string Nom, string Prenom, List<Projet> Proj) : base(Nom, Prenom, Proj) {
+            _matieres = new List<Matiere>();
+        }
 
         public Professeur(string Nom, string Prenom, List<Projet> Proj, List<Matiere> Matiere) : base(Nom, Prenom, Proj)
         {

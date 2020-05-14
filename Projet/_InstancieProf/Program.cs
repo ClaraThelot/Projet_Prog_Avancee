@@ -50,10 +50,7 @@ namespace _InstancieProf
                 Prof.Add(profe);
 
             }
-            foreach (Professeur element in Prof)
-            {
-                Console.WriteLine(element.ToString());
-            }
+  
             return Prof;
         }
     }

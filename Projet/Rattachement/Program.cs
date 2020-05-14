@@ -61,10 +61,10 @@ namespace Rattachement
         public static List<Professeur> RattacheProf()
         {
             List<Professeur> professeur= new List<Professeur>();
-            professeur = _InstancePersonne.Program.instancieProfesseur();
+            professeur = _InstancieProf.Program.instancieProfesseur();
             List<Projet> Projets = new List<Projet>();
             Projets = _InstanceProjet.Program.instancieProjet();
-           /* foreach (Professeur element in professeur)
+           foreach (Professeur element in professeur)
             {
                 foreach (Projet p in Projets)
                 {
@@ -73,10 +73,6 @@ namespace Rattachement
                         if (e._nom == element._nom)element.ajoutProjet(p);
                     }
                 }
-            }*/
-            foreach(Professeur element in professeur)
-            {
-                Console.WriteLine(element.ToString());
             }
             return professeur;
         }

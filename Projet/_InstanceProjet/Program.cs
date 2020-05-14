@@ -32,7 +32,7 @@ namespace _InstanceProjet
             List<Exterieur> Exterieurs = new List<Exterieur>();
             Exterieurs = _InstancePersonne.Program.instancieIntervenantE();
             List<Professeur> Professeurs = new List<Professeur>();
-            Professeurs = _InstancePersonne.Program.instancieProfesseur();
+            Professeurs = _InstancieProf.Program.instancieProfesseur();
             System.IO.StreamReader file4 = new System.IO.StreamReader("Projets.txt");
             while ((ligneP = file4.ReadLine()) != null)
             {

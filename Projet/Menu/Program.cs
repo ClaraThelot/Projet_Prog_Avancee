@@ -132,7 +132,7 @@ namespace Menu
                         Console.Write(element._nom);
                         Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Exte.IndexOf(element));
                     }
-                    RetourMenu();
+                    //RetourMenu();
                     int numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
                     foreach (Exterieur element in Exte)
                     { if (numerochoisi == Exte.IndexOf(element)) Console.WriteLine(element.ToString()); }
@@ -141,7 +141,13 @@ namespace Menu
                 
                case "4":
                     Console.WriteLine("Voici la liste des professeurs de l'école");
-                    Rattachement.Program.RattacheProf();
+                    List<Professeur> prof = new List<Professeur>();
+                    prof= Rattachement.Program.RattacheProf();
+                    foreach(Professeur element in prof)
+                    {
+                        Console.WriteLine(element.ToString());
+                    }
+                    RetourMenu();
                     return true;
 
   
