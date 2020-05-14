@@ -183,7 +183,10 @@ namespace _projet
                 Console.Write(element._nom);
                 Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez 2" + _professeurs.IndexOf(element));
             }
-            Console.WriteLine("Matières concernées :");
+            Console.WriteLine("\r\n Détail des rôles de chacun des intervenants");
+            Role.RattacheRole(_code);
+
+            Console.WriteLine(" \r\n Matières concernées :");
             foreach(Matiere element in _matieres)
             { Console.WriteLine(element._nom); } 
             Console.WriteLine("\r\n");
@@ -205,25 +208,29 @@ namespace _projet
             string determiner = saisienum.Substring(0,1);
             saisienum = saisienum.Substring(1);
             int numerochoisi = int.Parse(saisienum);
+            
+            
 
             if (determiner == "0")
             {
                 foreach (Eleve element in _eleves)
-                {if (numerochoisi == _eleves.IndexOf(element)) Console.WriteLine(element.ToString()); }
+                {if (numerochoisi == _eleves.IndexOf(element)) Console.WriteLine(element.ToString());  }
             }
+
             else 
             {
                 if (determiner =="1")
                 {
                     foreach (Exterieur element in _intervenants)
-                    {  if (numerochoisi == _intervenants.IndexOf(element)) Console.WriteLine(element.ToString()); }
+                    {  if (numerochoisi == _intervenants.IndexOf(element)) Console.WriteLine(element.ToString());  }
                 }
                 else
                 {
-                    if (determiner == "3")
+                    if (determiner == "2")
                     {
                         foreach (Professeur element in _professeurs)
-                        { if (numerochoisi == _professeurs.IndexOf(element)) Console.WriteLine(element.ToString()); }
+                        {  
+                            if (numerochoisi == _professeurs.IndexOf(element)) Console.WriteLine(element.ToString());  }
                     }
                     else Console.WriteLine("Désolée, nous ne pouvons afficher cela, vous avez du faire une erreur !");
                 }

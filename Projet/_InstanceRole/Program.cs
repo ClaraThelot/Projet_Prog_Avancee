@@ -14,7 +14,7 @@ namespace _InstanceRole
     {
         static void Main(string[] args)
         { }
-        public static List<Role> instancieRole()
+       /* public static List<Role> instancieRole()
         {
             char separateur = '*';
             List<Role> Roles = new List<Role>();
@@ -56,7 +56,7 @@ namespace _InstanceRole
                 Roles.Add(role);
             }
             return Roles;
-        }
+        }*/
     }
     
 }

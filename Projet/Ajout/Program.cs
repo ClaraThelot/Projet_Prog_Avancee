@@ -285,7 +285,7 @@ namespace Ajout
                 string nv = _nom + "*" + _date + "*" + totalLignes + "*";
                 try
                 {
-                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter("Rôles.txt", append: true))
+                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter("Livrables.txt", append: true))
                     {
 
                         writer.Write("\r\n" +nv );

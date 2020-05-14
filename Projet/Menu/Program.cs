@@ -140,50 +140,12 @@ namespace Menu
 
                 
                case "4":
-                    List<Professeur> Prof = new List<Professeur>();
-                    Prof = Rattachement.Program.RattacheProf();
-                    Console.WriteLine("Vous avez choisi de rechercher des professeurs !");
-                    Console.WriteLine("Si vous voulez les voir s'afficher par matière, tapez 1, si vous les voulez par nom, tapez 2 !");
-                    switch (Console.ReadLine())
-                    {
-                        case "1":
-                            List<Matiere> MatiereEnseignee = new List<Matiere>();
-                            MatiereEnseignee = _InstanceMatiere.Program.instancieMatiere();
-                            foreach (Matiere element in MatiereEnseignee)
-                            {
-                                Console.WriteLine("Matière enseignée : " + element._nom);
-                                foreach (Professeur prof in Prof)
-                                {
-                                    foreach (Matiere mat in prof._matieres)
-                                    {
-                                        Matiere temp = new Matiere();
-                                        temp = mat;
-                                        if (temp == element)
-                                        {
-                                            Console.Write(prof._nom);
-                                            Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Prof.IndexOf(prof));
-                                        }
-                                    }
-                                }
-                            }
-                           // RetourMenu();
-                            numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
-                            foreach (Professeur element in Prof)
-                            { if (numerochoisi == Prof.IndexOf(element)) Console.WriteLine(element.ToString()); }
-                            return true;
-                        case "2":
-                            foreach (Professeur prof in Prof)
-                            {
-                                Console.Write(prof._nom);
-                                Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez " + Prof.IndexOf(prof));//Pour l'instant pas d'ordre alphabétique
-                            }
-                            //RetourMenu();
-                            numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
-                            foreach (Professeur element in Prof)
-                            { if (numerochoisi == Prof.IndexOf(element)) Console.WriteLine(element.ToString()); }
-                            return true;
-                        default: return false;
-                    }
+                    Console.WriteLine("Voici la liste des professeurs de l'école");
+                    Rattachement.Program.RattacheProf();
+                    return true;
+
+  
+                    
                    
                 case "5":
                     List<Projet> Proj = new List<Projet>();
@@ -200,7 +162,13 @@ namespace Menu
                             }
                             numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
                             foreach (Projet element in Proj)
-                            { if (numerochoisi == Proj.IndexOf(element)) element.Affichage(element); }
+                            {
+                                if (numerochoisi == Proj.IndexOf(element)) { element.Affichage(element);
+
+                                    
+                                
+                            }
+                    }
                             return true;
                         case "2":
                             foreach (Projet element in Proj)
