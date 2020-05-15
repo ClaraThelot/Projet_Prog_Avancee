@@ -51,3 +51,6 @@ C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Ajout\obj\Debug\Ajout.csproj.CopyComplete
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Ajout\obj\Debug\Ajout.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Ajout\obj\Debug\Ajout.pdb
+C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Ajout\bin\Debug\Rattachement.exe
+C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Ajout\bin\Debug\Rattachement.pdb
+C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Ajout\bin\Debug\Rattachement.exe.config

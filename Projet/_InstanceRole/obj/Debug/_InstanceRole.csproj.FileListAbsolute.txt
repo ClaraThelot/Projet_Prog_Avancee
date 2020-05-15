@@ -41,3 +41,6 @@ C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceRole\obj\Debug\_InstanceRole.csproj.CopyComplete
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceRole\obj\Debug\_InstanceRole.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceRole\obj\Debug\_InstanceRole.pdb
+C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceRole\bin\Debug\Rattachement.exe
+C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceRole\bin\Debug\Rattachement.pdb
+C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\_InstanceRole\bin\Debug\Rattachement.exe.config

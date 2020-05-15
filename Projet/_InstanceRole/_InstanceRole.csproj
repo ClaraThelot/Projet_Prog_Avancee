@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Rattachement\Rattachement.csproj">
+      <Project>{deb269bd-7d56-478c-88d7-d4e07b841fe1}</Project>
+      <Name>Rattachement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\_InstanceExterieur\_InstancePersonne.csproj">
       <Project>{b48dd257-baf7-42db-b104-910abe60056d}</Project>
       <Name>_InstancePersonne</Name>

@@ -21,15 +21,12 @@ C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_Insta
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\Rattachement.exe.config
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\Rattachement.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\Rattachement.pdb
-C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceEleve.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceExterieur.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceProjet.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstancieProf.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_projet.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceMatiere.exe
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceLivrable.exe
-C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceEleve.pdb
-C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceEleve.exe.config
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceExterieur.pdb
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceExterieur.exe.config
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceProjet.pdb
@@ -48,6 +45,3 @@ C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee
 C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\obj\Debug\Rattachement.pdb
 C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceRole.exe
 C:\Users\THELOT\Desktop\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceRole.pdb
-C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceRole.exe
-C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceRole.pdb
-C:\Users\Installation\Desktop\ENSC\S6\Progra avancée\Projet\Projet_Prog_Avancee\Projet\Rattachement\bin\Debug\_InstanceRole.exe.config

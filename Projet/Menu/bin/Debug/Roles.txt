@@ -1,0 +1,5 @@
+Professeur*0*Solomas
+Chieur*6*Favier
+Fumeur*3*Aries
+Cadreur*4*Gillon
+Prof*4*Mougin

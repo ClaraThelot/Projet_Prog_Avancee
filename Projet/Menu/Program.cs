@@ -134,7 +134,7 @@ namespace Menu
                             numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
                             foreach (Projet element in Proj)
                             {
-                                if (numerochoisi == Proj.IndexOf(element)) element.Affichage(element);
+                                if (numerochoisi == Proj.IndexOf(element)) _InstanceRole.Program.AffichageProj(element);// element.Affichage(element);
                             }
                             return true;
                         case "2":
@@ -156,7 +156,7 @@ namespace Menu
                             numerochoisi = int.Parse(Console.ReadLine()); // On convertit en un entier
                             foreach (Projet element in Proj)
                             {
-                                if (numerochoisi == Proj.IndexOf(element)) element.Affichage(element);
+                                if (numerochoisi == Proj.IndexOf(element)) _InstanceRole.Program.AffichageProj(element);
                             }
 
                             return true;

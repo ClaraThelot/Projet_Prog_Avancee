@@ -81,7 +81,5 @@ namespace _AffichageListes // Pour factoriser les codes d'affichage des différe
             }
         }
 
-
-
     }
 }

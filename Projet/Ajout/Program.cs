@@ -117,7 +117,7 @@ namespace Ajout
                     Console.WriteLine("Tapez le code associé à l'élève du projet.");
                     Console.WriteLine("Voilà la liste des élèves répertoriés !");
                     _AffichageListes.Program.EnSavoirPlusE(TousEleves2);
-                    Console.WriteLine("Si l'élève que vous voulez sélectionner n'apparaît pas à l'écran, il va falloir le créer ! Dans ce cas, tapez creer");
+                    Console.WriteLine("Si l'élève que vous voulez sélectionner n'apparaît pas à l'écran, il va falloir le créer ! Dans ce cas, tapez 000");
 
                     int numerochoisiE = int.Parse(Console.ReadLine());
                     if (numerochoisiE == 000)
@@ -139,20 +139,23 @@ namespace Ajout
                         int numpromo = int.Parse(promotion);
                         Console.WriteLine("Son groupe de TD ?");
                         string gp = Console.ReadLine();
-                        nvlLigneE = nvlLigneE  + gp + "*";
+                        nvlLigneE = nvlLigneE + gp + "*";
                         int groupe = int.Parse(gp);
-                        Eleve nvlEleve = new Eleve(nomchoisiE,prenom,annee,numpromo,groupe);
+                        Eleve nvlEleve = new Eleve(nomchoisiE, prenom, annee, numpromo, groupe);
                         TousEleves2.Add(nvlEleve);
                         participant.Add(nvlEleve);
                         _AffichageListes.Program.CreaCode("Eleves.txt", nvlLigneE);
                         ligne = ligne + "E" + nomchoisiE + "*";
                     }
-                    foreach (Eleve element in TousEleves2)
+                    else
                     {
-                        if (numerochoisiE == TousEleves2.IndexOf(element))
+                        foreach (Eleve element in TousEleves2)
                         {
-                            participant.Add(TousEleves2[numerochoisiE]);
-                            ligne = ligne + "E" + TousEleves2[numerochoisiE]._nom + "*";
+                            if (numerochoisiE == TousEleves2.IndexOf(element))
+                            {
+                                participant.Add(TousEleves2[numerochoisiE]);
+                                ligne = ligne + "E" + TousEleves2[numerochoisiE]._nom + "*";
+                            }
                         }
                     }
                 }
@@ -176,6 +179,7 @@ namespace Ajout
             int NbI = int.Parse(Console.ReadLine());
             for (int i = 1; i < NbI + 1; i++)
             {
+                Exterieur ExChoisi = new Exterieur();
                 Console.WriteLine("Occupons-nous de l'intervenant extérieur n°" + i);
                 Console.WriteLine("Voulez vous sélectionner l'intervenant parmi une liste ? Si c'est le cas, tapez oui. Si vous pouvez écrire directement le nom (de famille) de l'intervenant, faîtes le !");
                 string choixI = Console.ReadLine();
@@ -184,12 +188,36 @@ namespace Ajout
                     Console.WriteLine("Tapez le code associé à l'extérieur du projet.");
                     Console.WriteLine("Voilà la liste des extérieurs répertoriés !");
                     _AffichageListes.Program.EnSavoirPlusEx(TousExte);
-                    int numerochoisi1 = int.Parse(Console.ReadLine());
-                    foreach (Exterieur element in TousExte)
+                    Console.WriteLine("Si l'intervenant que vous voulez sélectionner n'apparaît pas à l'écran, il va falloir le créer ! Dans ce cas, tapez creer");
+
+                    int numerochoisiEx = int.Parse(Console.ReadLine());
+                    if (numerochoisiEx == 000)
                     {
-                        if (numerochoisi1 == TousExte.IndexOf(element))
+                        Console.WriteLine("C'est parti pour la création d'un intervenant extérieur !");
+                        int totalLignesEx = File.ReadLines("Exterieurs.txt").Count();
+                        Console.WriteLine("Quel est le prénom de cet intervenant ?");
+                        string nvlLigneEx = Console.ReadLine();
+                        string nomchoisiEx = nvlLigneEx;
+                        Console.WriteLine("Son nom de famille ?");
+                        string nomfamEx = Console.ReadLine();
+                        nvlLigneEx = nvlLigneEx + "*" + nomfamEx;
+                        Console.WriteLine("Son emploi actuel ?");
+                        string emploi = Console.ReadLine();
+                        nvlLigneEx = nvlLigneEx + "*" + emploi + "*";
+                        Console.WriteLine("L'entreprise ou l'établissement dans lequel il exerce ?");
+                        string etablissement = Console.ReadLine();
+                        nvlLigneEx = nvlLigneEx + etablissement + "*";
+                        Exterieur nvlEx = new Exterieur(nomfamEx, nomchoisiEx, emploi, etablissement);
+                        ExChoisi = nvlEx;
+                        TousExte.Add(nvlEx);
+                        _AffichageListes.Program.CreaCode("Exterieurs.txt", nvlLigneEx);
+                        //ligne = ligne + "P" + nomfamEx + "*";
+                    }
+                    else
+                    {
+                    foreach (Exterieur element in TousExte)
                         {
-                            ligne = ligne + "P" + TousExte[numerochoisi1]._nom + "*";
+                            if (numerochoisiEx == TousExte.IndexOf(element)) ExChoisi = element;
                         }
                     }
                 }
@@ -197,10 +225,17 @@ namespace Ajout
                 {
                     foreach(Exterieur element in TousExte)
                     {
-                        if (choixI == element._nom) ligne = ligne + "P" + choixI + "*";
+                        if (choixI == element._nom) ExChoisi = element;
                     }
                 }
+                // On a sélectionné l'extérieur voulu : c'est ExChoisi.
+                ligne = ligne + "P" + ExChoisi._nom + "*";
+                Console.WriteLine("Vous avez choisi l'intervenant " + ExChoisi._nom + " !");
+                Console.WriteLine("Quel rôle va-t-il endosser dans ce projet ?");
+                string ligneRole = Console.ReadLine()+"*"+totalLignes +"*"+ ExChoisi._nom+"*";
+                _AffichageListes.Program.CreaCode("Roles.txt", ligneRole);
             }
+
             //Séléction du chef de projet :
             Console.WriteLine("Tapez le code associé au chef du projet.");
             Console.WriteLine("Voilà la liste des élèves participant !");

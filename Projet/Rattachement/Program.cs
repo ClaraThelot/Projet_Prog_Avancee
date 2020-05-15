@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _AffichageListes;
 using _InstanceProjet;
 using _projet;
 using _InstancePersonne;
 using _InstancieProf;
 using _InstanceMatiere;
-using _InstanceRole;
 
 namespace Rattachement
 {
@@ -77,9 +75,6 @@ namespace Rattachement
             }
             return professeur;
         }
-
-
-
         static void Main(string[] args)
         {
             RattacheProf();

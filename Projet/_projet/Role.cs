@@ -40,17 +40,17 @@ namespace _projet
             string line;
             char separateur = '*';
             string nom;
-            string _code;
+            string codeArattacher;
             string personne;
             List<Role> Roles = new List<Role>();
-            System.IO.StreamReader file = new System.IO.StreamReader("Rôles.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader("Roles.txt");
             while ((line = file.ReadLine()) != null)
             {
                 String[] information = line.Split(separateur);
                 nom = information[0];
-                code = information[1];
+                codeArattacher = information[1];
                 personne = information[2];
-                Role R = new Role(nom, code, personne);
+                Role R = new Role(nom, codeArattacher, personne);
                 Roles.Add(R);
             }
                 
@@ -59,7 +59,7 @@ namespace _projet
                 if (r._code == code)
                 {
                     Console.WriteLine(r.ToString());
-                  }
+                }
             }
         }
 

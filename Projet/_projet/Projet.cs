@@ -54,10 +54,7 @@ namespace _projet
             _sujetAcheve = sujetAcheve;
             _note = note;
         }
-        public void ajoutEleve (Eleve E1)
-        {
-            
-        }
+       
         public void supprimeEleve(Eleve E1)
         {
             int counter = 0;
@@ -160,8 +157,8 @@ namespace _projet
 
         public void Affichage(object obj)
         {
-            Console.WriteLine("Nom du projet: " + _nomProjet + "\n");
-            Console.WriteLine("Durée du projet :" + _duree + " mois \n");
+           /* Console.WriteLine("Nom du projet : " + _nomProjet + "\n");
+            Console.WriteLine("Durée du projet : " + _duree + " mois \n");
             if (_sujetLibre == true) Console.WriteLine("Sujet imposé" +"\r\n");
             Console.WriteLine("Eleves participant : ");
             foreach (Eleve element in _eleves)
@@ -183,10 +180,10 @@ namespace _projet
                 Console.Write(element._nom);
                 Console.WriteLine("     Si vous voulez en savoir plus sur cet intervenant, tapez 2" + _professeurs.IndexOf(element));
             }
-            Console.WriteLine("\r\n Détail des rôles de chacun des intervenants");
+            Console.WriteLine("\r\nDétail des rôles de chacun des intervenants");
             Role.RattacheRole(_code);
 
-            Console.WriteLine(" \r\n Matières concernées :");
+            Console.WriteLine(" \r\nMatières concernées :");
             foreach(Matiere element in _matieres)
             { Console.WriteLine(element._nom); } 
             Console.WriteLine("\r\n");
@@ -208,8 +205,6 @@ namespace _projet
             string determiner = saisienum.Substring(0,1);
             saisienum = saisienum.Substring(1);
             int numerochoisi = int.Parse(saisienum);
-            
-            
 
             if (determiner == "0")
             {
@@ -235,7 +230,7 @@ namespace _projet
                     else Console.WriteLine("Désolée, nous ne pouvons afficher cela, vous avez du faire une erreur !");
                 }
             }
-            
+            */
         }
 
         public void AffichageDepuisListe(object obj, List<object> List)
