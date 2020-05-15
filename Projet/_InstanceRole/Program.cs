@@ -14,7 +14,21 @@ namespace _InstanceRole
     public  class Program
     {
         static void Main(string[] args)
-        { }
+        {
+            
+        }
+        
+        public static int CompteProjet()
+        {
+            int max = 0;
+            List<Projet> Proj = _InstanceProjet.Program.instancieProjet();
+            foreach(Projet element in Proj)
+            {
+                if (int.Parse(element._code) > max) max = int.Parse(element._code);
+            }
+            return max;
+        }
+        
         public static void AffichageProj(Projet proj)
         { Console.WriteLine("Nom du projet : " + proj._nomProjet + "\n");
             Console.WriteLine("Durée du projet : " + proj._duree + " mois \n");

@@ -5,13 +5,9 @@ Rapport*2020/06/05*4*
 Livre des connaissances*2020/06/05*5*
 Analyse de données*2020/06/12*6*
 Soutenance*2020/05/18*7*
-Soutenance*2020/01/19*0*
 Cahier des Charges*2019/12/02*0*
-Soutenance*2020/08/08*17*
-Danse*2020/20/20*18*
-Soutenance*2022/08/16*18*
 Soutenance*2222/12/12*16*
 Soutenance*2312/12/12*17*
-Cadeaux*2020/12/25*18*
-b*2020/11/11*18*
-Cigares*2020/12/19*19*
+CdC*2020/10/10*18*
+Soutenance*2020/02/02*18*
+CdC*2020/06/12*18*

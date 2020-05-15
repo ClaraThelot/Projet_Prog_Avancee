@@ -21,6 +21,7 @@ namespace Menu
         
         static void Main(string[] args)
         {
+           
             Console.WriteLine("Bienvenue dans votre application ! Aujourd'hui, si vous souhaitez faire une recherche, tapez 1");
             Console.WriteLine("Si vous souhaitez rajouter un projet, tapez 2");
             int choixUt = int.Parse(Console.ReadLine());
@@ -108,14 +109,35 @@ namespace Menu
                     return true;
                 
                case "4":
-                    Console.WriteLine("Voici la liste des professeurs de l'école");
+                    Console.WriteLine("Si vous voulez voir tous les professeurs s'afficher, tapez 1 !");
+                    Console.WriteLine("Si vous voulez voir les professeurs s'afficher par matière, tapez 2 !");
                     List<Professeur> prof = new List<Professeur>();
-                    prof= Rattachement.Program.RattacheProf();
-                    foreach(Professeur element in prof)
+                    prof = Rattachement.Program.RattacheProf();
+                    int choixE = int.Parse(Console.ReadLine());
+                    if (choixE == 1)
                     {
-                        Console.WriteLine(element.ToString());
+                        Console.WriteLine("Voici la liste des professeurs de l'école");
+                        _AffichageListes.Program.EnSavoirPlusProf(prof);
+                        int numerochoisiP = int.Parse(Console.ReadLine()); // On convertit en un entier
+                        foreach (Professeur element in prof)
+                        { if (numerochoisiP == prof.IndexOf(element)) Console.WriteLine(element.ToString()); }
                     }
-                    RetourMenu();
+                    else
+                    {// Bah du coup là je comprends pas pq ça marche pas;
+                        List<Matiere> Mat = new List<Matiere>();
+                        Mat = _InstanceMatiere.Program.instancieMatiere();
+                        foreach(Matiere m in Mat)
+                        {
+                            Console.WriteLine(m._nom);
+                            foreach(Professeur p in prof)
+                            {
+                                foreach (Matiere mEnseignee in p._matieres)
+                                {
+                                    if (m == mEnseignee) Console.WriteLine(p._nom);
+                                }
+                            }
+                        }
+                    }
                     return true;
                    
                 case "5":

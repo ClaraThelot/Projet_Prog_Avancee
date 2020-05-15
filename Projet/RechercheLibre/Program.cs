@@ -92,7 +92,7 @@ namespace RechercheLibre
             {
                 if (recherche == element._nomProjet)
                 {
-                    Console.WriteLine(element.ToString());
+                   _InstanceRole.Program.AffichageProj(element);
                 }
                 
                 double nombre;
@@ -100,7 +100,7 @@ namespace RechercheLibre
                 {
                     if (double.Parse(recherche) == element._duree|| double.Parse(recherche) == element._note)
                     {
-                        Console.WriteLine(element.ToString());
+                        _InstanceRole.Program.AffichageProj(element);
                     }
                 }
                 

@@ -19,7 +19,7 @@ namespace Ajout
        
         public static bool MenuAjout()
         {
-
+            int codeProj = _InstanceRole.Program.CompteProjet() + 1;
             int totalLignes = File.ReadLines("Projets.txt").Count();                                     //Permettra d'identifier le projet
             Console.WriteLine("Bienvenue sur le menu des ajouts !");
             Console.WriteLine("Vous allez pouvoir créer un projet. D'abord, saisissez-en le nom.");
@@ -171,7 +171,7 @@ namespace Ajout
                     }
                 }
             }
-
+            Console.WriteLine(ligne);
             // Sélection des intervenants
             Console.WriteLine("Combien d'extérieurs interviennent sur ce projet ?");
             List<Exterieur> TousExte = new List<Exterieur>();
@@ -211,7 +211,7 @@ namespace Ajout
                         ExChoisi = nvlEx;
                         TousExte.Add(nvlEx);
                         _AffichageListes.Program.CreaCode("Exterieurs.txt", nvlLigneEx);
-                        //ligne = ligne + "P" + nomfamEx + "*";
+                        ligne = ligne + "P" + nomfamEx + "*";
                     }
                     else
                     {
@@ -230,9 +230,10 @@ namespace Ajout
                 }
                 // On a sélectionné l'extérieur voulu : c'est ExChoisi.
                 ligne = ligne + "P" + ExChoisi._nom + "*";
+                Console.WriteLine(ligne);
                 Console.WriteLine("Vous avez choisi l'intervenant " + ExChoisi._nom + " !");
                 Console.WriteLine("Quel rôle va-t-il endosser dans ce projet ?");
-                string ligneRole = Console.ReadLine()+"*"+totalLignes +"*"+ ExChoisi._nom+"*";
+                string ligneRole = Console.ReadLine()+"*"+codeProj+"*"+ ExChoisi._nom+"*";
                 _AffichageListes.Program.CreaCode("Roles.txt", ligneRole);
             }
 
@@ -248,7 +249,7 @@ namespace Ajout
                     ligne = ligne +"C"+ participant[numerochoisi4]._nom + "*";
                 }
             }
-
+            Console.WriteLine(ligne);
             //Séléction des Livrables
             Console.WriteLine("Combien de livrables sont attendus dans ce projet ?");
             int NbL = int.Parse(Console.ReadLine());
@@ -258,7 +259,7 @@ namespace Ajout
                 string _nom = Console.ReadLine();
                 Console.WriteLine("Quelle est l'échéance de ce livrable ? (de la forme AAAA/MM/JJ)");
                 string _date = Console.ReadLine();
-                string nv = _nom + "*" + _date + "*" + totalLignes + "*";
+                string nv = _nom + "*" + _date + "*" + codeProj + "*";
                 _AffichageListes.Program.CreaCode("Livrables.txt", nv);
             }
 
@@ -269,6 +270,7 @@ namespace Ajout
             int NbProf = int.Parse(Console.ReadLine());
             for (int i = 1; i < NbProf + 1; i++)
             {
+                Professeur ProfChoisi = new Professeur();
                 Console.WriteLine("Occupons-nous du professeur n°" + i);
                 Console.WriteLine("Voulez vous sélectionner le professeur parmi une liste ? Si c'est le cas, tapez oui. Si vous pouvez écrire directement le nom (de famille) du professeur, faîtes le !");
                 string choixP = Console.ReadLine();
@@ -284,25 +286,28 @@ namespace Ajout
                     int numerochoisi2 = int.Parse(Console.ReadLine()); 
                     foreach (Professeur element in TousProfs)
                     {
-                        if (numerochoisi2 == TousProfs.IndexOf(element))
-                        {
-                            ligne = ligne + "M" + TousProfs[numerochoisi2]._nom;
-                        }
+                        if (numerochoisi2 == TousProfs.IndexOf(element)) ProfChoisi = element;
                     }
                 }
                 else
                 {
                     foreach (Professeur element in TousProfs)
                     {
-                        if (choixP == element._nom)
-                        {
-                            ligne = ligne + "M" + element._nom+'*';
-                        }
+                        if (choixP == element._nom) ProfChoisi = element;
                     }
                 }
+                // On a sélectionné le prof : c'est ProfChoisi.
+                ligne = ligne + "M" + ProfChoisi._nom + "*";
+                Console.WriteLine(ligne);
+                Console.WriteLine("Vous avez choisi l'intervenant " + ProfChoisi._nom + " !");
+                Console.WriteLine("Quel rôle va-t-il endosser dans ce projet ?");
+                string ligneRole = Console.ReadLine() + "*" + codeProj + "*" + ProfChoisi._nom + "*";
+                _AffichageListes.Program.CreaCode("Roles.txt", ligneRole);
             }
+
+            
             //Ecriture dans le fichier Projets.txt
-            string ecrire = totalLignes + "*" + ligne;
+            string ecrire = codeProj + "*" + ligne;
             _AffichageListes.Program.CreaCode("Projets.txt", ecrire);
             //Affichage de la création 
             Console.Clear();

@@ -3,3 +3,8 @@ Chieur*6*Favier
 Fumeur*3*Aries
 Cadreur*4*Gillon
 Prof*4*Mougin
+Lolilol*18*Gillon*
+Professeur*18*Aries*
+Chargé TD*18*Baptiste*
+Médecin*18*Basvert*
+Fumeur*18*Aries*

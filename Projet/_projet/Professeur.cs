@@ -11,6 +11,7 @@ namespace _projet
     {
         public List<Matiere> _matieres { get; set; }                                                       // J'ai temporairement enlevé le fait que c'est un tableau
 
+        public Professeur() { }
         public Professeur(string Nom, string Prenom, List<Matiere> Matieres) : base(Nom, Prenom) {
             _matieres = Matieres;
         }

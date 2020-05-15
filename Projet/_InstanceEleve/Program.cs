@@ -65,6 +65,16 @@ namespace _AffichageListes // Pour factoriser les codes d'affichage des différe
                 }
             }
         }
+        public static void EnSavoirPlusProf(List<Professeur> ListeP)
+        {
+            foreach (Professeur element in ListeP)
+            {
+                {
+                    Console.Write(element._nom);
+                    Console.WriteLine("     Si vous voulez sélectionner ce prof en particulier, tapez " + ListeP.IndexOf(element));
+                }
+            }
+        }
         public static void CreaCode(string file, string ligne)
         {
             try
